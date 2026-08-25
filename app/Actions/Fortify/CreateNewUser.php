@@ -85,7 +85,6 @@ class CreateNewUser implements CreatesNewUsers
             'currency' => $currency,
             's_currency' => $s_currency,
             'password' => Hash::make($input['password']),
-            'bonus' => 15,
         ]);
 
         $cryptoaccnt = new CryptoAccount();

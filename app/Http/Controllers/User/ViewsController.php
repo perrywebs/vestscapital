@@ -51,7 +51,7 @@ class ViewsController extends Controller
             User::where('id', $user->id)
                 ->update([
                     'bonus' => $user->bonus + $settings->signup_bonus,
-                    'account_bal' => $user->account_bal + $settings->signup_bonus,
+                    // 'account_bal' => $user->account_bal + $settings->signup_bonus,
                     'signup_bonus' => "received",
                 ]);
             //create history
