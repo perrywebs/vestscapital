@@ -9,31 +9,80 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="Awaiken">
+
     <!-- Page Title -->
     <title>{{ $settings->site_name }}</title>
+
+    <!-- ============================================ -->
+    <!-- SOCIAL MEDIA / OPEN GRAPH META TAGS -->
+    <!-- ============================================ -->
+
+    <!-- Primary Meta Tags (Facebook, LinkedIn, WhatsApp, etc.) -->
+    <meta property="og:title" content="{{ $settings->site_name }}" />
+    <meta property="og:description" content="{{ $settings->site_description ?? 'Your website description here' }}" />
+    <meta property="og:url" content="{{ url()->current() }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{ URL('storage/app/public/' . $settings->favicon) }}" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:site_name" content="{{ $settings->site_name }}" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card (for Twitter/X) -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ $settings->site_name }}" />
+    <meta name="twitter:description" content="{{ $settings->site_description ?? 'Your website description here' }}" />
+    <meta name="twitter:image" content="{{ URL('storage/app/public/' . $settings->favicon) }}" />
+
+    <!-- Option: Use a dedicated social share image instead of favicon -->
+    <meta property="og:image"
+        content="{{ URL('storage/app/public/' . $settings->social_share_image ?? $settings->favicon) }}" />
+
+    <!-- WhatsApp / Telegram / iMessage (also use og:image) -->
+    <!-- The og:image tag above covers WhatsApp and other messaging apps -->
+
+    <!-- For better WhatsApp preview, also add: -->
+    <meta property="og:image:secure_url" content="{{ URL('storage/app/public/' . $settings->favicon) }}" />
+
+    <!-- ============================================ -->
+    <!-- END SOCIAL MEDIA META TAGS -->
+    <!-- ============================================ -->
+
     <!-- Favicon Icon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ URL('storage/app/public/' . $settings->favicon) }}">
+    <link rel="icon" type="image/x-icon" href="{{ URL('storage/app/public/' . $settings->favicon) }}">
+    <link rel="apple-touch-icon" href="{{ URL('storage/app/public/' . $settings->favicon) }}">
+
     <!-- Google Fonts Css-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="../css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
         rel="stylesheet">
+
     <!-- Custom Fonts Css-->
     <link href="{{ URL('home-assets/css/fonts.css') }}" rel="stylesheet" media="screen">
+
     <!-- Bootstrap Css -->
     <link href="{{ URL('home-assets/css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+
     <!-- SlickNav Css -->
     <link href="{{ URL('home-assets/css/slicknav.min.css') }}" rel="stylesheet">
+
     <!-- Swiper Css -->
     <link rel="stylesheet" href="{{ URL('home-assets/css/swiper-bundle.min.css') }}">
+
     <!-- Font Awesome Icon Css-->
     <link href="{{ URL('home-assets/css/all.min.css') }}" rel="stylesheet" media="screen">
+
     <!-- Animated Css -->
     <link href="{{ URL('home-assets/css/animate.css') }}" rel="stylesheet">
+
     <!-- Magnific Popup Core Css File -->
     <link rel="stylesheet" href="{{ URL('home-assets/css/magnific-popup.css') }}">
+
     <!-- Mouse Cursor Css File -->
     <link rel="stylesheet" href="{{ URL('home-assets/css/mousecursor.css') }}">
+
     <!-- Main Custom Css -->
     <link href="{{ URL('home-assets/css/custom.css') }}" rel="stylesheet" media="screen">
 </head>
