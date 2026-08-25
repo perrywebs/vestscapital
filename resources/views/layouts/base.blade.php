@@ -43,7 +43,8 @@
     <div class="preloader">
         <div class="loading-container">
             <div class="loading"></div>
-            <div id="loading-icon"><img src="{{ URL('storage/app/public/' . $settings->favicon) }}" alt=""></div>
+            <div id="loading-icon"><img src="{{ URL('storage/app/public/' . $settings->favicon) }}" alt="">
+            </div>
             {{ $settings->site_name }}
         </div>
     </div>
@@ -66,8 +67,8 @@
                             <ul class="navbar-nav mr-auto" id="menu">
                                 <li class="nav-item"><a class="nav-link" href="/">Home</a>
                                 <li class="nav-item"><a class="nav-link" href="/about">About Us</a>
-                                    <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                             </ul>
                         </div>
 
@@ -109,7 +110,7 @@
                     <div class="about-footer">
                         <!-- Footer Logo Start -->
                         <div class="footer-logo">
-                            <img src="{{ URL('storage/app/public/'.$settings->logo)}}" alt="">
+                            <img src="{{ URL('storage/app/public/' . $settings->logo) }}" alt="">
                         </div>
                         <!-- Footer Logo End -->
 
@@ -158,12 +159,13 @@
                         <!-- Footer Newsletter Form Box Start -->
                         <div class="footer-newsletter-form-box">
                             <h2>Subscribe Our Newsletter</h2>
-                            <form id="newslettersForm" onsubmit="window.alert('Newsletter subscribed! Chat with us.on Live Chat')">
+                            <form id="newslettersForm"
+                                onsubmit="window.alert('Newsletter subscribed! Chat with us.on Live Chat')">
                                 <div class="form-group">
                                     <input type="email" name="mail" class="form-control" id="mail"
                                         placeholder="Enter Your E-mail" required="">
                                     <button type="submit" class="newsletter-btn"><i
-                                            class="fa-regular fa-paper-plane" ></i></button>
+                                            class="fa-regular fa-paper-plane"></i></button>
                                 </div>
                             </form>
                         </div>
@@ -178,7 +180,9 @@
                                 </div>
                                 <div class="footer-contact-item-content">
                                     <p>Email Address</p>
-                                    <h3><a href="mailto:{{ $settings->contact_email }}">{{ $settings->contact_email }}</a></h3>
+                                    <h3><a
+                                            href="mailto:{{ $settings->contact_email }}">{{ $settings->contact_email }}</a>
+                                    </h3>
                                 </div>
                             </div>
                             <!-- Footer Contact Item End -->
@@ -186,7 +190,8 @@
                             <!-- Footer Contact Item Start -->
                             <div class="footer-contact-item">
                                 <div class="icon-box">
-                                    <img src="{{ URL('home-assets/images/icon-location-white.svg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/icon-location-white.svg') }}"
+                                        alt="">
                                 </div>
                                 <div class="footer-contact-item-content">
                                     <p>Our Address</p>
@@ -248,6 +253,7 @@
     <!-- <script src="../assets/js/theme-panel-dynamic.js"></script> -->
 
     @include('layouts.livechat')
+    @include('layouts.lang')
 </body>
 
 </html>

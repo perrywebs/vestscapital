@@ -31,7 +31,7 @@
                         <div class="flex items-center justify-center mb-6">
                             <div class="relative">
                                 <!-- Remove glow effect -->
-                                <img src="<?php echo e(asset('storage/'.$settings->logo)); ?>"
+                                <img src="<?php echo e(URL('storage/app/public/' . $settings->logo)); ?>"
                                      class="relative h-16 w-auto"
                                      alt="<?php echo e($settings->site_name); ?>" />
                             </div>

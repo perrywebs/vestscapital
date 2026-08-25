@@ -12,7 +12,7 @@
     <!-- Page Title -->
     <title><?php echo e($settings->site_name); ?></title>
     <!-- Favicon Icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo e(asset('storage/' . $settings->favicon)); ?>">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo e(URL('storage/app/public/' . $settings->favicon)); ?>">
     <!-- Google Fonts Css-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -43,7 +43,7 @@
     <div class="preloader">
         <div class="loading-container">
             <div class="loading"></div>
-            <div id="loading-icon"><img src="<?php echo e(URL('storage/' . $settings->favicon)); ?>" alt=""></div>
+            <div id="loading-icon"><img src="<?php echo e(URL('storage/app/public/' . $settings->favicon)); ?>" alt=""></div>
             <?php echo e($settings->site_name); ?>
 
         </div>
@@ -57,7 +57,7 @@
                 <div class="container">
                     <!-- Logo Start -->
                     <a class="navbar-brand" href="/">
-                        <img src="<?php echo e(URL('storage/' . $settings->logo)); ?>" alt="Logo">
+                        <img src="<?php echo e(URL('storage/app/public/' . $settings->logo)); ?>" alt="Logo">
                     </a>
                     <!-- Logo End -->
 
@@ -110,7 +110,7 @@
                     <div class="about-footer">
                         <!-- Footer Logo Start -->
                         <div class="footer-logo">
-                            <img src="<?php echo e(URL('storage/'.$settings->logo)); ?>" alt="">
+                            <img src="<?php echo e(URL('storage/app/public/'.$settings->logo)); ?>" alt="">
                         </div>
                         <!-- Footer Logo End -->
 
