@@ -2,89 +2,175 @@
 <html lang="en" class="dark">
 
 <head>
-    <!-- Meta -->
+    <!-- =========================================================
+         BASIC META
+    ========================================================== -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="Awaiken">
+
+    <meta name="description"
+        content="{{ $settings->site_description ?? $settings->site_name }}">
+    <meta name="keywords"
+        content="{{ $settings->site_keywords ?? $settings->site_name }}">
+    <meta name="author" content="{{ $settings->site_name }}">
 
     <!-- Page Title -->
     <title>{{ $settings->site_name }}</title>
 
-    <!-- ============================================ -->
-    <!-- SOCIAL MEDIA / OPEN GRAPH META TAGS -->
-    <!-- ============================================ -->
 
-    <!-- Primary Meta Tags (Facebook, LinkedIn, WhatsApp, etc.) -->
-    <meta property="og:title" content="{{ $settings->site_name }}" />
-    <meta property="og:description" content="{{ $settings->site_description ?? 'Your website description here' }}" />
-    <meta property="og:url" content="{{ url()->current() }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="{{ URL('storage/app/public/' . $settings->favicon) }}" />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
-    <meta property="og:site_name" content="{{ $settings->site_name }}" />
-    <meta property="og:locale" content="en_US" />
+    <!-- =========================================================
+         CANONICAL URL
+    ========================================================== -->
+    <link rel="canonical" href="{{ url()->current() }}">
 
-    <!-- Twitter Card (for Twitter/X) -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="{{ $settings->site_name }}" />
-    <meta name="twitter:description" content="{{ $settings->site_description ?? 'Your website description here' }}" />
-    <meta name="twitter:image" content="{{ URL('storage/app/public/' . $settings->favicon) }}" />
 
-    <!-- Option: Use a dedicated social share image instead of favicon -->
-    <meta property="og:image"
-        content="{{ URL('storage/app/public/' . $settings->social_share_image ?? $settings->favicon) }}" />
+    <!-- =========================================================
+         SOCIAL MEDIA / OPEN GRAPH
+         Facebook | WhatsApp | LinkedIn | Telegram | etc.
+    ========================================================== -->
 
-    <!-- WhatsApp / Telegram / iMessage (also use og:image) -->
-    <!-- The og:image tag above covers WhatsApp and other messaging apps -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ $settings->site_name }}">
+    <meta property="og:description"
+        content="{{ $settings->site_description ?? $settings->site_name }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:site_name" content="{{ $settings->site_name }}">
+    <meta property="og:locale" content="en_US">
 
-    <!-- For better WhatsApp preview, also add: -->
-    <meta property="og:image:secure_url" content="{{ URL('storage/app/public/' . $settings->favicon) }}" />
+    @php
+        /*
+         * Use a dedicated social sharing image if available.
+         * Otherwise fall back to the favicon.
+         */
+        $socialImage = !empty($settings->social_share_image)
+            ? $settings->social_share_image
+            : $settings->favicon;
 
-    <!-- ============================================ -->
-    <!-- END SOCIAL MEDIA META TAGS -->
-    <!-- ============================================ -->
+        $socialImageUrl = url('storage/app/public/' . $socialImage);
+    @endphp
 
-    <!-- Favicon Icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ URL('storage/app/public/' . $settings->favicon) }}">
-    <link rel="icon" type="image/x-icon" href="{{ URL('storage/app/public/' . $settings->favicon) }}">
-    <link rel="apple-touch-icon" href="{{ URL('storage/app/public/' . $settings->favicon) }}">
+    <meta property="og:image" content="{{ $socialImageUrl }}">
+    <meta property="og:image:secure_url" content="{{ $socialImageUrl }}">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{ $settings->site_name }}">
 
-    <!-- Google Fonts Css-->
+
+    <!-- =========================================================
+         TWITTER / X
+    ========================================================== -->
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $settings->site_name }}">
+    <meta name="twitter:description"
+        content="{{ $settings->site_description ?? $settings->site_name }}">
+    <meta name="twitter:image" content="{{ $socialImageUrl }}">
+    <meta name="twitter:image:alt" content="{{ $settings->site_name }}">
+
+
+    <!-- =========================================================
+         FAVICON
+    ========================================================== -->
+
+    <link rel="shortcut icon"
+        type="image/x-icon"
+        href="{{ url('storage/app/public/' . $settings->favicon) }}">
+
+    <link rel="icon"
+        type="image/x-icon"
+        href="{{ url('storage/app/public/' . $settings->favicon) }}">
+
+    <link rel="apple-touch-icon"
+        href="{{ url('storage/app/public/' . $settings->favicon) }}">
+
+
+    <!-- =========================================================
+         GOOGLE FONTS
+    ========================================================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="../css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
         rel="stylesheet">
 
-    <!-- Custom Fonts Css-->
-    <link href="{{ URL('home-assets/css/fonts.css') }}" rel="stylesheet" media="screen">
 
-    <!-- Bootstrap Css -->
-    <link href="{{ URL('home-assets/css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+    <!-- =========================================================
+         CUSTOM FONTS
+    ========================================================== -->
 
-    <!-- SlickNav Css -->
-    <link href="{{ URL('home-assets/css/slicknav.min.css') }}" rel="stylesheet">
+    <link href="{{ url('home-assets/css/fonts.css') }}"
+        rel="stylesheet"
+        media="screen">
 
-    <!-- Swiper Css -->
-    <link rel="stylesheet" href="{{ URL('home-assets/css/swiper-bundle.min.css') }}">
 
-    <!-- Font Awesome Icon Css-->
-    <link href="{{ URL('home-assets/css/all.min.css') }}" rel="stylesheet" media="screen">
+    <!-- =========================================================
+         BOOTSTRAP
+    ========================================================== -->
 
-    <!-- Animated Css -->
-    <link href="{{ URL('home-assets/css/animate.css') }}" rel="stylesheet">
+    <link href="{{ url('home-assets/css/bootstrap.min.css') }}"
+        rel="stylesheet"
+        media="screen">
 
-    <!-- Magnific Popup Core Css File -->
-    <link rel="stylesheet" href="{{ URL('home-assets/css/magnific-popup.css') }}">
 
-    <!-- Mouse Cursor Css File -->
-    <link rel="stylesheet" href="{{ URL('home-assets/css/mousecursor.css') }}">
+    <!-- =========================================================
+         SLICKNAV
+    ========================================================== -->
 
-    <!-- Main Custom Css -->
-    <link href="{{ URL('home-assets/css/custom.css') }}" rel="stylesheet" media="screen">
+    <link href="{{ url('home-assets/css/slicknav.min.css') }}"
+        rel="stylesheet">
+
+
+    <!-- =========================================================
+         SWIPER
+    ========================================================== -->
+
+    <link rel="stylesheet"
+        href="{{ url('home-assets/css/swiper-bundle.min.css') }}">
+
+
+    <!-- =========================================================
+         FONT AWESOME
+    ========================================================== -->
+
+    <link href="{{ url('home-assets/css/all.min.css') }}"
+        rel="stylesheet"
+        media="screen">
+
+
+    <!-- =========================================================
+         ANIMATIONS
+    ========================================================== -->
+
+    <link href="{{ url('home-assets/css/animate.css') }}"
+        rel="stylesheet">
+
+
+    <!-- =========================================================
+         MAGNIFIC POPUP
+    ========================================================== -->
+
+    <link rel="stylesheet"
+        href="{{ url('home-assets/css/magnific-popup.css') }}">
+
+
+    <!-- =========================================================
+         MOUSE CURSOR
+    ========================================================== -->
+
+    <link rel="stylesheet"
+        href="{{ url('home-assets/css/mousecursor.css') }}">
+
+
+    <!-- =========================================================
+         MAIN CUSTOM CSS
+    ========================================================== -->
+
+    <link href="{{ url('home-assets/css/custom.css') }}"
+        rel="stylesheet"
+        media="screen">
 </head>
 
 <body class="antialiased text-gray-200 bg-gray-900 font-sans min-h-screen flex flex-col">
