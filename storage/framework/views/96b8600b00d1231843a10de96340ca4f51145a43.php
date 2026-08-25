@@ -19,23 +19,23 @@
     <link href="../css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
         rel="stylesheet">
     <!-- Custom Fonts Css-->
-    <link href="<?php echo e(asset('home-assets/css/fonts.css')); ?>" rel="stylesheet" media="screen">
+    <link href="<?php echo e(URL('home-assets/css/fonts.css')); ?>" rel="stylesheet" media="screen">
     <!-- Bootstrap Css -->
-    <link href="<?php echo e(asset('home-assets/css/bootstrap.min.css')); ?>" rel="stylesheet" media="screen">
+    <link href="<?php echo e(URL('home-assets/css/bootstrap.min.css')); ?>" rel="stylesheet" media="screen">
     <!-- SlickNav Css -->
-    <link href="<?php echo e(asset('home-assets/css/slicknav.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL('home-assets/css/slicknav.min.css')); ?>" rel="stylesheet">
     <!-- Swiper Css -->
-    <link rel="stylesheet" href="<?php echo e(asset('home-assets/css/swiper-bundle.min.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(URL('home-assets/css/swiper-bundle.min.css')); ?>">
     <!-- Font Awesome Icon Css-->
-    <link href="<?php echo e(asset('home-assets/css/all.min.css')); ?>" rel="stylesheet" media="screen">
+    <link href="<?php echo e(URL('home-assets/css/all.min.css')); ?>" rel="stylesheet" media="screen">
     <!-- Animated Css -->
-    <link href="<?php echo e(asset('home-assets/css/animate.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL('home-assets/css/animate.css')); ?>" rel="stylesheet">
     <!-- Magnific Popup Core Css File -->
-    <link rel="stylesheet" href="<?php echo e(asset('home-assets/css/magnific-popup.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(URL('home-assets/css/magnific-popup.css')); ?>">
     <!-- Mouse Cursor Css File -->
-    <link rel="stylesheet" href="<?php echo e(asset('home-assets/css/mousecursor.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(URL('home-assets/css/mousecursor.css')); ?>">
     <!-- Main Custom Css -->
-    <link href="<?php echo e(asset('home-assets/css/custom.css')); ?>" rel="stylesheet" media="screen">
+    <link href="<?php echo e(URL('home-assets/css/custom.css')); ?>" rel="stylesheet" media="screen">
 </head>
 
 <body class="antialiased text-gray-200 bg-gray-900 font-sans min-h-screen flex flex-col">
@@ -43,7 +43,7 @@
     <div class="preloader">
         <div class="loading-container">
             <div class="loading"></div>
-            <div id="loading-icon"><img src="<?php echo e(asset('storage/' . $settings->favicon)); ?>" alt=""></div>
+            <div id="loading-icon"><img src="<?php echo e(URL('storage/' . $settings->favicon)); ?>" alt=""></div>
             <?php echo e($settings->site_name); ?>
 
         </div>
@@ -57,7 +57,7 @@
                 <div class="container">
                     <!-- Logo Start -->
                     <a class="navbar-brand" href="/">
-                        <img src="<?php echo e(asset('storage/' . $settings->logo)); ?>" alt="Logo">
+                        <img src="<?php echo e(URL('storage/' . $settings->logo)); ?>" alt="Logo">
                     </a>
                     <!-- Logo End -->
 
@@ -110,7 +110,7 @@
                     <div class="about-footer">
                         <!-- Footer Logo Start -->
                         <div class="footer-logo">
-                            <img src="<?php echo e(asset('storage/'.$settings->logo)); ?>" alt="">
+                            <img src="<?php echo e(URL('storage/'.$settings->logo)); ?>" alt="">
                         </div>
                         <!-- Footer Logo End -->
 
@@ -175,7 +175,7 @@
                             <!-- Footer Contact Item Start -->
                             <div class="footer-contact-item">
                                 <div class="icon-box">
-                                    <img src="<?php echo e(asset('home-assets/images/icon-mail-white.svg')); ?>" alt="">
+                                    <img src="<?php echo e(URL('home-assets/images/icon-mail-white.svg')); ?>" alt="">
                                 </div>
                                 <div class="footer-contact-item-content">
                                     <p>Email Address</p>
@@ -187,7 +187,7 @@
                             <!-- Footer Contact Item Start -->
                             <div class="footer-contact-item">
                                 <div class="icon-box">
-                                    <img src="<?php echo e(asset('home-assets/images/icon-location-white.svg')); ?>" alt="">
+                                    <img src="<?php echo e(URL('home-assets/images/icon-location-white.svg')); ?>" alt="">
                                 </div>
                                 <div class="footer-contact-item-content">
                                     <p>Our Address</p>
@@ -214,38 +214,38 @@
     <!-- Main Footer End -->
 
     <!-- Jquery Library File -->
-    <script src="<?php echo e(asset('home-assets/js/jquery-3.7.1.min.js')); ?>"></script>
+    <script src="<?php echo e(URL('home-assets/js/jquery-3.7.1.min.js')); ?>"></script>
     <!-- Circle Progress Js File -->
-    <script src="<?php echo e(asset('home-assets/js/circle-progress.min.js')); ?>"></script>
+    <script src="<?php echo e(URL('home-assets/js/circle-progress.min.js')); ?>"></script>
     <!-- Bootstrap js file -->
-    <script src="<?php echo e(asset('home-assets/js/bootstrap.min.js')); ?>"></script>
+    <script src="<?php echo e(URL('home-assets/js/bootstrap.min.js')); ?>"></script>
     <!-- Validator js file -->
-    <script src="<?php echo e(asset('home-assets/js/validator.min.js')); ?>"></script>
+    <script src="<?php echo e(URL('home-assets/js/validator.min.js')); ?>"></script>
     <!-- SlickNav js file -->
-    <script src="<?php echo e(asset('home-assets/js/jquery.slicknav.js')); ?>"></script>
+    <script src="<?php echo e(URL('home-assets/js/jquery.slicknav.js')); ?>"></script>
     <!-- Swiper js file -->
-    <script src="<?php echo e(asset('home-assets/js/swiper-bundle.min.js')); ?>"></script>
+    <script src="<?php echo e(URL('home-assets/js/swiper-bundle.min.js')); ?>"></script>
     <!-- Counter js file -->
-    <script src="<?php echo e(asset('home-assets/js/jquery.waypoints.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('home-assets/js/jquery.counterup.min.js')); ?>"></script>
+    <script src="<?php echo e(URL('home-assets/js/jquery.waypoints.min.js')); ?>"></script>
+    <script src="<?php echo e(URL('home-assets/js/jquery.counterup.min.js')); ?>"></script>
     <!-- Magnific js file -->
-    <script src="<?php echo e(asset('home-assets/js/jquery.magnific-popup.min.js')); ?>"></script>
+    <script src="<?php echo e(URL('home-assets/js/jquery.magnific-popup.min.js')); ?>"></script>
     <!-- SmoothScroll -->
-    <script src="<?php echo e(asset('home-assets/js/SmoothScroll.js')); ?>"></script>
+    <script src="<?php echo e(URL('home-assets/js/SmoothScroll.js')); ?>"></script>
     <!-- Parallax js -->
-    <script src="<?php echo e(asset('home-assets/js/parallaxie.js')); ?>"></script>
+    <script src="<?php echo e(URL('home-assets/js/parallaxie.js')); ?>"></script>
     <!-- MagicCursor js file -->
-    <script src="<?php echo e(asset('home-assets/js/gsap.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('home-assets/js/magiccursor.js')); ?>"></script>
+    <script src="<?php echo e(URL('home-assets/js/gsap.min.js')); ?>"></script>
+    <script src="<?php echo e(URL('home-assets/js/magiccursor.js')); ?>"></script>
     <!-- Text Effect js file -->
-    <script src="<?php echo e(asset('home-assets/js/SplitText.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('home-assets/js/ScrollTrigger.min.js')); ?>"></script>
+    <script src="<?php echo e(URL('home-assets/js/SplitText.min.js')); ?>"></script>
+    <script src="<?php echo e(URL('home-assets/js/ScrollTrigger.min.js')); ?>"></script>
     <!-- YTPlayer js File -->
-    <script src="<?php echo e(asset('home-assets/js/jquery.mb.YTPlayer.min.js')); ?>"></script>
+    <script src="<?php echo e(URL('home-assets/js/jquery.mb.YTPlayer.min.js')); ?>"></script>
     <!-- Wow js file -->
-    <script src="<?php echo e(asset('home-assets/js/wow.min.js')); ?>"></script>
+    <script src="<?php echo e(URL('home-assets/js/wow.min.js')); ?>"></script>
     <!-- Main Custom js file -->
-    <script src="<?php echo e(asset('home-assets/js/function.js')); ?>"></script>
+    <script src="<?php echo e(URL('home-assets/js/function.js')); ?>"></script>
     <!-- <script src="../assets/js/theme-panel-dynamic.js"></script> -->
 
     <?php echo $__env->make('layouts.livechat', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

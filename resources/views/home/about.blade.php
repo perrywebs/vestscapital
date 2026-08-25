@@ -49,7 +49,7 @@
                             <!-- About Us Body Image Start -->
                             <div class="about-us-body-image">
                                 <figure class="image-anime">
-                                    <img src="{{ asset('home-assets/images/about-us-body-image.jpg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/about-us-body-image.jpg') }}" alt="">
                                 </figure>
                             </div>
                             <!-- About Us Body Image End -->
@@ -58,7 +58,7 @@
                             <div class="about-body-item">
                                 <div class="about-body-item-header">
                                     <div class="icon-box">
-                                        <img src="{{ asset('home-assets/images/icon-about-us-info.svg') }}" alt="">
+                                        <img src="{{ URL('home-assets/images/icon-about-us-info.svg') }}" alt="">
                                     </div>
                                     <div class="about-body-item-title">
                                         <h3>Financial Partner</h3>
@@ -85,7 +85,7 @@
                                 <!-- About Author Image Start -->
                                 <div class="about-us-author-image">
                                     <figure class="image-anime">
-                                        <img src="{{ asset('home-assets/images/author-1.jpg') }}" alt="">
+                                        <img src="{{ URL('home-assets/images/author-1.jpg') }}" alt="">
                                     </figure>
                                 </div>
                                 <!-- About Author Image End -->
@@ -110,7 +110,7 @@
                         <!-- About Us Image Start -->
                         <div class="about-us-image box-1">
                             <figure class="image-anime">
-                                <img src="{{ asset('home-assets/images/about-us-image-box-image-1.jpg') }}" alt="">
+                                <img src="{{ URL('home-assets/images/about-us-image-box-image-1.jpg') }}" alt="">
                             </figure>
                         </div>
                         <!-- About Us Image End -->
@@ -118,7 +118,7 @@
                         <!-- About Us Image 2 Start -->
                         <div class="about-us-image box-2">
                             <figure class="image-anime">
-                                <img src="{{ asset('home-assets/images/about-us-image-box-image-2.jpg') }}" alt="">
+                                <img src="{{ URL('home-assets/images/about-us-image-box-image-2.jpg') }}" alt="">
                             </figure>
                         </div>
                         <!-- About Us Image 2 End -->
@@ -171,7 +171,7 @@
                         <!-- Approach Item Image Start -->
                         <div class="approach-item-image">
                             <figure class="image-anime">
-                                <img src="{{ asset('home-assets/images/approch-image-1.jpg') }}" alt="">
+                                <img src="{{ URL('home-assets/images/approch-image-1.jpg') }}" alt="">
                             </figure>
                         </div>
                         <!-- Approach Item Image End -->
@@ -193,7 +193,7 @@
                         <!-- Approach Item Image Start -->
                         <div class="approach-item-image">
                             <figure class="image-anime">
-                                <img src="{{ asset('home-assets/images/approch-image-2.jpg') }}" alt="">
+                                <img src="{{ URL('home-assets/images/approch-image-2.jpg') }}" alt="">
                             </figure>
                         </div>
                         <!-- Approach Item Image End -->
@@ -215,7 +215,7 @@
                         <!-- Approach Item Image Start -->
                         <div class="approach-item-image">
                             <figure class="image-anime">
-                                <img src="{{ asset('home-assets/images/approch-image-3.jpg') }}" alt="">
+                                <img src="{{ URL('home-assets/images/approch-image-3.jpg') }}" alt="">
                             </figure>
                         </div>
                         <!-- Approach Item Image End -->
@@ -266,13 +266,13 @@
                             <!-- Why Choose Image Start -->
                             <div class="why-choose-image">
                                 <figure class="image-anime">
-                                    <img src="{{ asset('home-assets/images/why-choose-image-1.jpg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/why-choose-image-1.jpg') }}" alt="">
                                 </figure>
 
                                 <!-- Contact Us Circle Start -->
                                 <div class="contact-us-circle">
                                     <a href="{{ route('contact') }}">
-                                        <img src="{{ asset('home-assets/images/contact-us-circle.svg') }}" alt="">
+                                        <img src="{{ URL('home-assets/images/contact-us-circle.svg') }}" alt="">
                                     </a>
                                 </div>
                                 <!-- Contact Us Circle End -->
@@ -282,7 +282,7 @@
                             <!-- Google Rating Box Start -->
                             <div class="google-rating-box">
                                 <div class="google-rating-logo">
-                                    <img src="{{ asset('home-assets/images/icon-google.svg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/icon-google.svg') }}" alt="">
                                 </div>
                                 <div class="google-rating-info">
                                     <div class="google-rating-info-header">
@@ -301,7 +301,7 @@
                         <!-- Why Choose Image Box 2 Start -->
                         <div class="why-choose-image-box-2 why-choose-image">
                             <figure class="image-anime">
-                                <img src="{{ asset('home-assets/images/why-choose-image-2.jpg') }}" alt="">
+                                <img src="{{ URL('home-assets/images/why-choose-image-2.jpg') }}" alt="">
                             </figure>
                         </div>
                         <!-- Why Choose Image Box 2 End -->
@@ -327,7 +327,7 @@
                             <!-- Why Choose Item Start -->
                             <div class="why-choose-item">
                                 <div class="icon-box">
-                                    <img src="{{ asset('home-assets/images/icon-why-choose-item-1.svg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/icon-why-choose-item-1.svg') }}" alt="">
                                 </div>
                                 <div class="why-choose-item-content">
                                     <h3>Data Driven Strategies</h3>
@@ -339,7 +339,7 @@
                             <!-- Why Choose Item Start -->
                             <div class="why-choose-item">
                                 <div class="icon-box">
-                                    <img src="{{ asset('home-assets/images/icon-why-choose-item-2.svg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/icon-why-choose-item-2.svg') }}" alt="">
                                 </div>
                                 <div class="why-choose-item-content">
                                     <h3>Customized Solutions</h3>
@@ -356,11 +356,11 @@
                             <div class="satisfy-client-images">
                                 <div class="satisfy-client-image">
                                     <figure class="image-anime">
-                                        <img src="{{ asset('home-assets/images/author-1.jpg') }}" alt="">
+                                        <img src="{{ URL('home-assets/images/author-1.jpg') }}" alt="">
                                     </figure>
                                 </div>
                                 <div class="satisfy-client-image add-more">
-                                    <i><img src="{{ asset('home-assets/images/icon-phone-white.svg') }}" alt=""></i>
+                                    <i><img src="{{ URL('home-assets/images/icon-phone-white.svg') }}" alt=""></i>
                                 </div>
                             </div>
                             <!-- Satisfy Client Images End -->
@@ -396,7 +396,7 @@
                     <div class="intro-video-circle wow fadeInUp">
                         <a href="https://www.youtube.com/watch?v=Y-x0efG1seA" class="popup-video"
                             data-cursor-text="Play">
-                            <img src="{{ asset('home-assets/images/intro-video-circle.svg') }}" alt="">
+                            <img src="{{ URL('home-assets/images/intro-video-circle.svg') }}" alt="">
                         </a>
                     </div>
                     <!-- Intro Video Circle End -->
@@ -409,7 +409,7 @@
                         <div class="intro-video-item">
                             <div class="intro-video-list-header">
                                 <div class="icon-box">
-                                    <img src="{{ asset('home-assets/images/icon-intro-video-1.svg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/icon-intro-video-1.svg') }}" alt="">
                                 </div>
                                 <div class="intro-video-item-title">
                                     <h3>Transactions Advised</h3>
@@ -435,7 +435,7 @@
                         <div class="intro-video-item">
                             <div class="intro-video-list-header">
                                 <div class="icon-box">
-                                    <img src="{{ asset('home-assets/images/icon-intro-video-3.svg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/icon-intro-video-3.svg') }}" alt="">
                                 </div>
                                 <div class="intro-video-item-title">
                                     <h3>Industry Experts</h3>
@@ -492,7 +492,7 @@
                                         <!-- Pricing Item Header Start -->
                                         <div class="pricing-item-header">
                                             <div class="icon-box">
-                                                <img src="{{ asset('home-assets/images/icon-pricing-item-1.svg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/icon-pricing-item-1.svg') }}" alt="">
                                             </div>
                                             <div class="pricing-item-content">
                                                 <h2>Basic Plan</h2>
@@ -530,7 +530,7 @@
                                         <!-- Pricing Item Header Start -->
                                         <div class="pricing-item-header">
                                             <div class="icon-box">
-                                                <img src="{{ asset('home-assets/images/icon-pricing-item-2.svg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/icon-pricing-item-2.svg') }}" alt="">
                                             </div>
                                             <div class="pricing-item-content">
                                                 <h2>Standard Plan</h2>
@@ -568,7 +568,7 @@
                                         <!-- Pricing Item Header Start -->
                                         <div class="pricing-item-header">
                                             <div class="icon-box">
-                                                <img src="{{ asset('home-assets/images/icon-pricing-item-3.svg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/icon-pricing-item-3.svg') }}" alt="">
                                             </div>
                                             <div class="pricing-item-content">
                                                 <h2>Premium Plan</h2>
@@ -612,7 +612,7 @@
                                         <!-- Pricing Item Header Start -->
                                         <div class="pricing-item-header">
                                             <div class="icon-box">
-                                                <img src="{{ asset('home-assets/images/icon-pricing-item-1.svg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/icon-pricing-item-1.svg') }}" alt="">
                                             </div>
                                             <div class="pricing-item-content">
                                                 <h2>Basic Plan</h2>
@@ -650,7 +650,7 @@
                                         <!-- Pricing Item Header Start -->
                                         <div class="pricing-item-header">
                                             <div class="icon-box">
-                                                <img src="{{ asset('home-assets/images/icon-pricing-item-2.svg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/icon-pricing-item-2.svg') }}" alt="">
                                             </div>
                                             <div class="pricing-item-content">
                                                 <h2>Standard Plan</h2>
@@ -688,7 +688,7 @@
                                         <!-- Pricing Item Header Start -->
                                         <div class="pricing-item-header">
                                             <div class="icon-box">
-                                                <img src="{{ asset('home-assets/images/icon-pricing-item-3.svg') }}" alt="Premium Plan">
+                                                <img src="{{ URL('home-assets/images/icon-pricing-item-3.svg') }}" alt="Premium Plan">
                                             </div>
                                             <div class="pricing-item-content">
                                                 <h2>Premium Plan</h2>
@@ -730,9 +730,9 @@
                     <!-- Pricing Benifit List Start -->
                     <div class="pricing-benefit-list wow fadeInUp" data-wow-delay="0.4s">
                         <ul>
-                            <li><img src="{{ asset('home-assets/images/icon-pricing-benefit-1.svg') }}" alt="Free Trial">Get 30 day free trial</li>
-                            <li><img src="{{ asset('home-assets/images/icon-pricing-benefit-2.svg') }}" alt="No Hidden Fees">No any hidden fees pay</li>
-                            <li><img src="{{ asset('home-assets/images/icon-pricing-benefit-3.svg') }}" alt="Cancel Anytime">You can cancel anytime</li>
+                            <li><img src="{{ URL('home-assets/images/icon-pricing-benefit-1.svg') }}" alt="Free Trial">Get 30 day free trial</li>
+                            <li><img src="{{ URL('home-assets/images/icon-pricing-benefit-2.svg') }}" alt="No Hidden Fees">No any hidden fees pay</li>
+                            <li><img src="{{ URL('home-assets/images/icon-pricing-benefit-3.svg') }}" alt="Cancel Anytime">You can cancel anytime</li>
                         </ul>
                     </div>
                     <!-- Pricing Benifit List End -->
@@ -830,11 +830,11 @@
                     <div class="satisfy-client-images">
                         <div class="satisfy-client-image">
                             <figure class="image-anime">
-                                <img src="{{ asset('home-assets/images/author-2.jpg') }}" alt="Client Image">
+                                <img src="{{ URL('home-assets/images/author-2.jpg') }}" alt="Client Image">
                             </figure>
                         </div>
                         <div class="satisfy-client-image add-more">
-                            <img src="{{ asset('home-assets/images/icon-phone-white.svg') }}" alt="Phone Icon">
+                            <img src="{{ URL('home-assets/images/icon-phone-white.svg') }}" alt="Phone Icon">
                         </div>
                     </div>
                     <!-- Satisfy Client Images End -->
@@ -882,7 +882,7 @@
                         <div class="team-item-image">
                             <a href="#" data-cursor-text="View">
                                 <figure>
-                                    <img src="{{ asset('home-assets/images/team-1.jpg') }}" alt="John Anderson">
+                                    <img src="{{ URL('home-assets/images/team-1.jpg') }}" alt="John Anderson">
                                 </figure>
                             </a>
                         </div>
@@ -902,7 +902,7 @@
                         <div class="team-item-image">
                             <a href="#" data-cursor-text="View">
                                 <figure>
-                                    <img src="{{ asset('home-assets/images/team-2.jpg') }}" alt="Sarah Williams">
+                                    <img src="{{ URL('home-assets/images/team-2.jpg') }}" alt="Sarah Williams">
                                 </figure>
                             </a>
                         </div>
@@ -922,7 +922,7 @@
                         <div class="team-item-image">
                             <a href="#" data-cursor-text="View">
                                 <figure>
-                                    <img src="{{ asset('home-assets/images/team-3.jpg') }}" alt="Michael Brown">
+                                    <img src="{{ URL('home-assets/images/team-3.jpg') }}" alt="Michael Brown">
                                 </figure>
                             </a>
                         </div>
@@ -943,11 +943,11 @@
                         <div class="satisfy-client-images">
                             <div class="satisfy-client-image">
                                 <figure class="image-anime">
-                                    <img src="{{ asset('home-assets/images/author-1.jpg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/author-1.jpg') }}" alt="">
                                 </figure>
                             </div>
                             <div class="satisfy-client-image add-more">
-                                <img src="{{ asset('home-assets/images/icon-phone-white.svg') }}" alt="">
+                                <img src="{{ URL('home-assets/images/icon-phone-white.svg') }}" alt="">
                             </div>
                         </div>
                         <!-- Satisfy Client Images End -->
@@ -989,7 +989,7 @@
                                         <div class="testimonial-item-author">
                                             <div class="testimonial-author-image">
                                                 <figure class="image-anime">
-                                                    <img src="{{ asset('home-assets/images/author-1.jpg') }}" alt="John Anderson">
+                                                    <img src="{{ URL('home-assets/images/author-1.jpg') }}" alt="John Anderson">
                                                 </figure>
                                             </div>
                                             <div class="testimonial-author-content">
@@ -1031,7 +1031,7 @@
                                         <div class="testimonial-item-author">
                                             <div class="testimonial-author-image">
                                                 <figure class="image-anime">
-                                                    <img src="{{ asset('home-assets/images/author-2.jpg') }}" alt="Sarah Williams">
+                                                    <img src="{{ URL('home-assets/images/author-2.jpg') }}" alt="Sarah Williams">
                                                 </figure>
                                             </div>
                                             <div class="testimonial-author-content">
@@ -1073,7 +1073,7 @@
                                         <div class="testimonial-item-author">
                                             <div class="testimonial-author-image">
                                                 <figure class="image-anime">
-                                                    <img src="{{ asset('home-assets/images/author-3.jpg') }}" alt="Michael Brown">
+                                                    <img src="{{ URL('home-assets/images/author-3.jpg') }}" alt="Michael Brown">
                                                 </figure>
                                             </div>
                                             <div class="testimonial-author-content">
@@ -1115,7 +1115,7 @@
                                         <div class="testimonial-item-author">
                                             <div class="testimonial-author-image">
                                                 <figure class="image-anime">
-                                                    <img src="{{ asset('home-assets/images/author-4.jpg') }}" alt="Ronaldo Richards">
+                                                    <img src="{{ URL('home-assets/images/author-4.jpg') }}" alt="Ronaldo Richards">
                                                 </figure>
                                             </div>
                                             <div class="testimonial-author-content">
@@ -1160,7 +1160,7 @@
                         <!-- Google Rating Box Start -->
                         <div class="google-rating-box">
                             <div class="google-rating-logo">
-                                <img src="{{ asset('home-assets/images/icon-google.svg') }}" alt="Google Logo">
+                                <img src="{{ URL('home-assets/images/icon-google.svg') }}" alt="Google Logo">
                             </div>
                             <div class="google-rating-info">
                                 <div class="google-rating-info-header">

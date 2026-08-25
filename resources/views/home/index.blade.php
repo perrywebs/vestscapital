@@ -35,7 +35,7 @@
                     <!-- Hero Support Box Start -->
                     <div class="hero-support-box wow fadeInUp">
                         <div class="icon-box">
-                            <img src="{{ asset('home-assets/images/icon-hero-support.svg') }}" alt="">
+                            <img src="{{ URL('home-assets/images/icon-hero-support.svg') }}" alt="">
                         </div>
                         <div class="hero-support-box-content">
                             <h2>Support That Drives Your Business</h2>
@@ -74,7 +74,7 @@
                             <!-- About Us Body Image Start -->
                             <div class="about-us-body-image">
                                 <figure class="image-anime">
-                                    <img src="{{ asset('home-assets/images/about-us-body-image.jpg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/about-us-body-image.jpg') }}" alt="">
                                 </figure>
                             </div>
                             <!-- About Us Body Image End -->
@@ -83,7 +83,7 @@
                             <div class="about-body-item">
                                 <div class="about-body-item-header">
                                     <div class="icon-box">
-                                        <img src="{{ asset('home-assets/images/icon-about-us-info.svg') }}" alt="">
+                                        <img src="{{ URL('home-assets/images/icon-about-us-info.svg') }}" alt="">
                                     </div>
                                     <div class="about-body-item-title">
                                         <h3>Financial Partner</h3>
@@ -110,7 +110,7 @@
                                 <!-- About Author Image Start -->
                                 <div class="about-us-author-image">
                                     <figure class="image-anime">
-                                        <img src="{{ asset('home-assets/images/author-1.jpg') }}" alt="">
+                                        <img src="{{ URL('home-assets/images/author-1.jpg') }}" alt="">
                                     </figure>
                                 </div>
                                 <!-- About Author Image End -->
@@ -135,7 +135,7 @@
                         <!-- About Us Image Start -->
                         <div class="about-us-image box-1">
                             <figure class="image-anime">
-                                <img src="{{ asset('home-assets/images/about-us-image-box-image-1.jpg') }}" alt="">
+                                <img src="{{ URL('home-assets/images/about-us-image-box-image-1.jpg') }}" alt="">
                             </figure>
                         </div>
                         <!-- About Us Image End -->
@@ -143,7 +143,7 @@
                         <!-- About Us Image 2 Start -->
                         <div class="about-us-image box-2">
                             <figure class="image-anime">
-                                <img src="{{ asset('home-assets/images/about-us-image-box-image-2.jpg') }}" alt="">
+                                <img src="{{ URL('home-assets/images/about-us-image-box-image-2.jpg') }}" alt="">
                             </figure>
                         </div>
                         <!-- About Us Image 2 End -->
@@ -160,7 +160,7 @@
                         <!-- Contact Us Circle Start -->
                         <div class="contact-us-circle">
                             <a href="contact.html">
-                                <img src="{{ asset('home-assets/images/contact-us-circle.svg') }}" alt="">
+                                <img src="{{ URL('home-assets/images/contact-us-circle.svg') }}" alt="">
                             </a>
                         </div>
                         <!-- Contact Us Circle End -->
@@ -220,7 +220,7 @@
                                         <div class="service-item-header-box">
                                             <div class="service-item-header">
                                                 <div class="icon-box">
-                                                    <img src="{{ asset('home-assets/images/icon-service-item-1.svg') }}" alt="">
+                                                    <img src="{{ URL('home-assets/images/icon-service-item-1.svg') }}" alt="">
                                                 </div>
                                                 <div class="service-item-title">
                                                     <h2><a href="service-single.html">Investment Advisory</a></h2>
@@ -236,12 +236,12 @@
                                         <!-- Service Item Image Start -->
                                         <div class="service-item-image">
                                             <figure class="image-anime">
-                                                <img src="{{ asset('home-assets/images/service-image-1.jpg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/service-image-1.jpg') }}" alt="">
                                             </figure>
 
                                             <!-- Service Item Button Start-->
                                             <div class="service-item-btn">
-                                                <a href="service-single.html"><img src="{{ asset('home-assets/images/arrow-white.svg') }}"
+                                                <a href="service-single.html"><img src="{{ URL('home-assets/images/arrow-white.svg') }}"
                                                         alt=""></a>
                                             </div>
                                             <!-- Service Item Button End-->
@@ -260,7 +260,7 @@
                                         <div class="service-item-header-box">
                                             <div class="service-item-header">
                                                 <div class="icon-box">
-                                                    <img src="{{ asset('home-assets/images/icon-service-item-2.svg') }}" alt="">
+                                                    <img src="{{ URL('home-assets/images/icon-service-item-2.svg') }}" alt="">
                                                 </div>
                                                 <div class="service-item-title">
                                                     <h2><a href="service-single.html">Financial Planning</a></h2>
@@ -276,12 +276,12 @@
                                         <!-- Service Item Image Start -->
                                         <div class="service-item-image">
                                             <figure class="image-anime">
-                                                <img src="{{ asset('home-assets/images/service-image-2.jpg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/service-image-2.jpg') }}" alt="">
                                             </figure>
 
                                             <!-- Service Item Button Start-->
                                             <div class="service-item-btn">
-                                                <a href="service-single.html"><img src="{{ asset('home-assets/images/arrow-white.svg') }}"
+                                                <a href="service-single.html"><img src="{{ URL('home-assets/images/arrow-white.svg') }}"
                                                         alt=""></a>
                                             </div>
                                             <!-- Service Item Button End-->
@@ -300,7 +300,7 @@
                                         <div class="service-item-header-box">
                                             <div class="service-item-header">
                                                 <div class="icon-box">
-                                                    <img src="{{ asset('home-assets/images/icon-service-item-3.svg') }}" alt="">
+                                                    <img src="{{ URL('home-assets/images/icon-service-item-3.svg') }}" alt="">
                                                 </div>
                                                 <div class="service-item-title">
                                                     <h2><a href="service-single.html">Wealth Management</a></h2>
@@ -316,12 +316,12 @@
                                         <!-- Service Item Image Start -->
                                         <div class="service-item-image">
                                             <figure class="image-anime">
-                                                <img src="{{ asset('home-assets/images/service-image-3.jpg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/service-image-3.jpg') }}" alt="">
                                             </figure>
 
                                             <!-- Service Item Button Start-->
                                             <div class="service-item-btn">
-                                                <a href="service-single.html"><img src="{{ asset('home-assets/images/arrow-white.svg') }}"
+                                                <a href="service-single.html"><img src="{{ URL('home-assets/images/arrow-white.svg') }}"
                                                         alt=""></a>
                                             </div>
                                             <!-- Service Item Button End-->
@@ -340,7 +340,7 @@
                                         <div class="service-item-header-box">
                                             <div class="service-item-header">
                                                 <div class="icon-box">
-                                                    <img src="{{ asset('home-assets/images/icon-service-item-4.svg') }}" alt="">
+                                                    <img src="{{ URL('home-assets/images/icon-service-item-4.svg') }}" alt="">
                                                 </div>
                                                 <div class="service-item-title">
                                                     <h2><a href="service-single.html">Tax Planning</a></h2>
@@ -356,12 +356,12 @@
                                         <!-- Service Item Image Start -->
                                         <div class="service-item-image">
                                             <figure class="image-anime">
-                                                <img src="{{ asset('home-assets/images/service-image-4.jpg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/service-image-4.jpg') }}" alt="">
                                             </figure>
 
                                             <!-- Service Item Button Start-->
                                             <div class="service-item-btn">
-                                                <a href="service-single.html"><img src="{{ asset('home-assets/images/arrow-white.svg') }}"
+                                                <a href="service-single.html"><img src="{{ URL('home-assets/images/arrow-white.svg') }}"
                                                         alt=""></a>
                                             </div>
                                             <!-- Service Item Button End-->
@@ -380,7 +380,7 @@
                                         <div class="service-item-header-box">
                                             <div class="service-item-header">
                                                 <div class="icon-box">
-                                                    <img src="{{ asset('home-assets/images/icon-service-item-5.svg') }}" alt="">
+                                                    <img src="{{ URL('home-assets/images/icon-service-item-5.svg') }}" alt="">
                                                 </div>
                                                 <div class="service-item-title">
                                                     <h2><a href="service-single.html">Tax Planning</a></h2>
@@ -396,12 +396,12 @@
                                         <!-- Service Item Image Start -->
                                         <div class="service-item-image">
                                             <figure class="image-anime">
-                                                <img src="{{ asset('home-assets/images/service-image-5.jpg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/service-image-5.jpg') }}" alt="">
                                             </figure>
 
                                             <!-- Service Item Button Start-->
                                             <div class="service-item-btn">
-                                                <a href="service-single.html"><img src="{{ asset('home-assets/images/arrow-white.svg') }}"
+                                                <a href="service-single.html"><img src="{{ URL('home-assets/images/arrow-white.svg') }}"
                                                         alt=""></a>
                                             </div>
                                             <!-- Service Item Button End-->
@@ -425,11 +425,11 @@
                         <div class="satisfy-client-images">
                             <div class="satisfy-client-image">
                                 <figure class="image-anime">
-                                    <img src="{{ asset('home-assets/images/author-1.jpg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/author-1.jpg') }}" alt="">
                                 </figure>
                             </div>
                             <div class="satisfy-client-image add-more">
-                                <img src="{{ asset('home-assets/images/icon-phone-white.svg') }}" alt="">
+                                <img src="{{ URL('home-assets/images/icon-phone-white.svg') }}" alt="">
                             </div>
                         </div>
                         <!-- Satisfy Client Images End -->
@@ -454,13 +454,13 @@
                             <!-- Why Choose Image Start -->
                             <div class="why-choose-image">
                                 <figure class="image-anime">
-                                    <img src="{{ asset('home-assets/images/why-choose-image-1.jpg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/why-choose-image-1.jpg') }}" alt="">
                                 </figure>
 
                                 <!-- Contact Us Circle Start -->
                                 <div class="contact-us-circle">
                                     <a href="{{ route('contact') }}">
-                                        <img src="{{ asset('home-assets/images/contact-us-circle.svg') }}" alt="">
+                                        <img src="{{ URL('home-assets/images/contact-us-circle.svg') }}" alt="">
                                     </a>
                                 </div>
                                 <!-- Contact Us Circle End -->
@@ -470,7 +470,7 @@
                             <!-- Google Rating Box Start -->
                             <div class="google-rating-box">
                                 <div class="google-rating-logo">
-                                    <img src="{{ asset('home-assets/images/icon-google.svg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/icon-google.svg') }}" alt="">
                                 </div>
                                 <div class="google-rating-info">
                                     <div class="google-rating-info-header">
@@ -489,7 +489,7 @@
                         <!-- Why Choose Image Box 2 Start -->
                         <div class="why-choose-image-box-2 why-choose-image">
                             <figure class="image-anime">
-                                <img src="{{ asset('home-assets/images/why-choose-image-2.jpg') }}" alt="">
+                                <img src="{{ URL('home-assets/images/why-choose-image-2.jpg') }}" alt="">
                             </figure>
                         </div>
                         <!-- Why Choose Image Box 2 End -->
@@ -515,7 +515,7 @@
                             <!-- Why Choose Item Start -->
                             <div class="why-choose-item">
                                 <div class="icon-box">
-                                    <img src="{{ asset('home-assets/images/icon-why-choose-item-1.svg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/icon-why-choose-item-1.svg') }}" alt="">
                                 </div>
                                 <div class="why-choose-item-content">
                                     <h3>Data Driven Strategies</h3>
@@ -527,7 +527,7 @@
                             <!-- Why Choose Item Start -->
                             <div class="why-choose-item">
                                 <div class="icon-box">
-                                    <img src="{{ asset('home-assets/images/icon-why-choose-item-2.svg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/icon-why-choose-item-2.svg') }}" alt="">
                                 </div>
                                 <div class="why-choose-item-content">
                                     <h3>Customized Solutions</h3>
@@ -544,11 +544,11 @@
                             <div class="satisfy-client-images">
                                 <div class="satisfy-client-image">
                                     <figure class="image-anime">
-                                        <img src="{{ asset('home-assets/images/author-1.jpg') }}" alt="">
+                                        <img src="{{ URL('home-assets/images/author-1.jpg') }}" alt="">
                                     </figure>
                                 </div>
                                 <div class="satisfy-client-image add-more">
-                                    <i><img src="{{ asset('home-assets/images/icon-phone-white.svg') }}" alt=""></i>
+                                    <i><img src="{{ URL('home-assets/images/icon-phone-white.svg') }}" alt=""></i>
                                 </div>
                             </div>
                             <!-- Satisfy Client Images End -->
@@ -584,7 +584,7 @@
                     <div class="intro-video-circle wow fadeInUp">
                         <a href="https://www.youtube.com/watch?v=Y-x0efG1seA" class="popup-video"
                             data-cursor-text="Play">
-                            <img src="{{ asset('home-assets/images/intro-video-circle.svg') }}" alt="">
+                            <img src="{{ URL('home-assets/images/intro-video-circle.svg') }}" alt="">
                         </a>
                     </div>
                     <!-- Intro Video Circle End -->
@@ -597,7 +597,7 @@
                         <div class="intro-video-item">
                             <div class="intro-video-list-header">
                                 <div class="icon-box">
-                                    <img src="{{ asset('home-assets/images/icon-intro-video-1.svg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/icon-intro-video-1.svg') }}" alt="">
                                 </div>
                                 <div class="intro-video-item-title">
                                     <h3>Transactions Advised</h3>
@@ -614,7 +614,7 @@
                         <div class="intro-video-item">
                             <div class="intro-video-list-header">
                                 <div class="icon-box">
-                                    <img src="{{ asset('home-assets/images/icon-intro-video-2.svg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/icon-intro-video-2.svg') }}" alt="">
                                 </div>
                                 <div class="intro-video-item-title">
                                     <h3>Countries Reached</h3>
@@ -631,7 +631,7 @@
                         <div class="intro-video-item">
                             <div class="intro-video-list-header">
                                 <div class="icon-box">
-                                    <img src="{{ asset('home-assets/images/icon-intro-video-3.svg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/icon-intro-video-3.svg') }}" alt="">
                                 </div>
                                 <div class="intro-video-item-title">
                                     <h3>Industry Experts</h3>
@@ -710,7 +710,7 @@
                                         <div class="project-item-image">
                                             <a href="{{ route('register') }}" data-cursor-text="View">
                                                 <figure>
-                                                    <img src="{{ asset('home-assets/images/project-2.jpg') }}" alt="">
+                                                    <img src="{{ URL('home-assets/images/project-2.jpg') }}" alt="">
                                                 </figure>
                                             </a>
                                         </div>
@@ -719,7 +719,7 @@
                                         <!-- Project Item Button Start -->
                                         <div class="project-item-btn">
                                             <a href="{{ route('register') }}" data-cursor-text="View">
-                                                <img src="{{ asset('home-assets/images/arrow-white.svg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/arrow-white.svg') }}" alt="">
                                             </a>
                                         </div>
                                         <!-- Project Item Button End -->
@@ -744,7 +744,7 @@
                                         <div class="project-item-image">
                                             <a href="{{ route('register') }}" data-cursor-text="View">
                                                 <figure>
-                                                    <img src="{{ asset('home-assets/images/project-3.jpg') }}" alt="">
+                                                    <img src="{{ URL('home-assets/images/project-3.jpg') }}" alt="">
                                                 </figure>
                                             </a>
                                         </div>
@@ -753,7 +753,7 @@
                                         <!-- Project Item Button Start -->
                                         <div class="project-item-btn">
                                             <a href="{{ route('register') }}">
-                                                <img src="{{ asset('home-assets/images/arrow-white.svg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/arrow-white.svg') }}" alt="">
                                             </a>
                                         </div>
                                         <!-- Project Item Button End -->
@@ -777,7 +777,7 @@
                                         <div class="project-item-image">
                                             <a href="{{ route('register') }}" data-cursor-text="View">
                                                 <figure>
-                                                    <img src="{{ asset('home-assets/images/project-4.jpg') }}" alt="">
+                                                    <img src="{{ URL('home-assets/images/project-4.jpg') }}" alt="">
                                                 </figure>
                                             </a>
                                         </div>
@@ -786,7 +786,7 @@
                                         <!-- Project Item Button Start -->
                                         <div class="project-item-btn">
                                             <a href="{{ route('register') }}">
-                                                <img src="{{ asset('home-assets/images/arrow-white.svg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/arrow-white.svg') }}" alt="">
                                             </a>
                                         </div>
                                         <!-- Project Item Button End -->
@@ -815,7 +815,7 @@
                                         <div class="project-item-image">
                                             <a href="{{ route('register') }}" data-cursor-text="View">
                                                 <figure>
-                                                    <img src="{{ asset('home-assets/images/project-5.jpg') }}" alt="">
+                                                    <img src="{{ URL('home-assets/images/project-5.jpg') }}" alt="">
                                                 </figure>
                                             </a>
                                         </div>
@@ -824,7 +824,7 @@
                                         <!-- Project Item Button Start -->
                                         <div class="project-item-btn">
                                             <a href="{{ route('register') }}">
-                                                <img src="{{ asset('home-assets/images/arrow-white.svg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/arrow-white.svg') }}" alt="">
                                             </a>
                                         </div>
                                         <!-- Project Item Button End -->
@@ -880,27 +880,27 @@
                                     <button class="nav-link active" id="first-tab" data-bs-toggle="tab"
                                         data-bs-target="#first" type="button" role="tab" aria-controls="first"
                                         aria-selected="true"><span class="icon-box"><img
-                                                src="{{ asset('home-assets/images/icon-our-expertise-tab-1.svg') }}" alt=""></span>Healthcare
+                                                src="{{ URL('home-assets/images/icon-our-expertise-tab-1.svg') }}" alt=""></span>Healthcare
                                         & Wellness</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="second-tab" data-bs-toggle="tab"
                                         data-bs-target="#second" type="button" role="tab"
                                         aria-selected="false"><span class="icon-box"><img
-                                                src="{{ asset('home-assets/images/icon-our-expertise-tab-2.svg') }}" alt=""></span>Technology
+                                                src="{{ URL('home-assets/images/icon-our-expertise-tab-2.svg') }}" alt=""></span>Technology
                                         & IT Services</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="thirds-tab" data-bs-toggle="tab"
                                         data-bs-target="#third" type="button" role="tab"
                                         aria-selected="false"><span class="icon-box"><img
-                                                src="{{ asset('home-assets/images/icon-our-expertise-tab-3.svg') }}" alt=""></span>Real
+                                                src="{{ URL('home-assets/images/icon-our-expertise-tab-3.svg') }}" alt=""></span>Real
                                         Estate & Construction</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="fourth-tab" data-bs-toggle="tab" data-bs-target="#four"
                                         type="button" role="tab" aria-selected="false"><span class="icon-box"><img
-                                                src="{{ asset('home-assets/images/icon-our-expertise-tab-4.svg') }}" alt=""></span>Retail &
+                                                src="{{ URL('home-assets/images/icon-our-expertise-tab-4.svg') }}" alt=""></span>Retail &
                                         E-commerce</button>
                                 </li>
                             </ul>
@@ -913,7 +913,7 @@
                                 <!-- Expertise Item Image Start -->
                                 <div class="expertise-item-image">
                                     <figure class="image-anime">
-                                        <img src="{{ asset('home-assets/images/expertise-tab-image-1.jpg') }}" alt="">
+                                        <img src="{{ URL('home-assets/images/expertise-tab-image-1.jpg') }}" alt="">
                                     </figure>
                                 </div>
                                 <!-- Expertise Item Image End -->
@@ -943,7 +943,7 @@
                                 <!-- Expertise Item Image Start -->
                                 <div class="expertise-item-image">
                                     <figure class="image-anime">
-                                        <img src="{{ asset('home-assets/images/expertise-tab-image-2.jpg') }}   " alt="">
+                                        <img src="{{ URL('home-assets/images/expertise-tab-image-2.jpg') }}   " alt="">
                                     </figure>
                                 </div>
                                 <!-- Expertise Item Image End -->
@@ -973,7 +973,7 @@
                                 <!-- Expertise Item Image Start -->
                                 <div class="expertise-item-image">
                                     <figure class="image-anime">
-                                        <img src="{{ asset('home-assets/images/expertise-tab-image-3.jpg') }}" alt="">
+                                        <img src="{{ URL('home-assets/images/expertise-tab-image-3.jpg') }}" alt="">
                                     </figure>
                                 </div>
                                 <!-- Expertise Item Image End -->
@@ -1003,7 +1003,7 @@
                                 <!-- Expertise Item Image Start -->
                                 <div class="expertise-item-image">
                                     <figure class="image-anime">
-                                        <img src="{{ asset('home-assets/images/expertise-tab-image-4.jpg') }}" alt="">
+                                        <img src="{{ URL('home-assets/images/expertise-tab-image-4.jpg') }}" alt="">
                                     </figure>
                                 </div>
                                 <!-- Expertise Item Image End -->
@@ -1071,7 +1071,7 @@
                                         <!-- Pricing Item Header Start -->
                                         <div class="pricing-item-header">
                                             <div class="icon-box">
-                                                <img src="{{ asset('home-assets/images/icon-pricing-item-1.svg') }} " alt="">
+                                                <img src="{{ URL('home-assets/images/icon-pricing-item-1.svg') }} " alt="">
                                             </div>
                                             <div class="pricing-item-content">
                                                 <h2>Basic Plan</h2>
@@ -1109,7 +1109,7 @@
                                         <!-- Pricing Item Header Start -->
                                         <div class="pricing-item-header">
                                             <div class="icon-box">
-                                                <img src="{{ asset('home-assets/images/icon-pricing-item-2.svg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/icon-pricing-item-2.svg') }}" alt="">
                                             </div>
                                             <div class="pricing-item-content">
                                                 <h2>Standard Plan</h2>
@@ -1147,7 +1147,7 @@
                                         <!-- Pricing Item Header Start -->
                                         <div class="pricing-item-header">
                                             <div class="icon-box">
-                                                <img src="{{ asset('home-assets/images/icon-pricing-item-3.svg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/icon-pricing-item-3.svg') }}" alt="">
                                             </div>
                                             <div class="pricing-item-content">
                                                 <h2>Premium Plan</h2>
@@ -1191,7 +1191,7 @@
                                         <!-- Pricing Item Header Start -->
                                         <div class="pricing-item-header">
                                             <div class="icon-box">
-                                                <img src="{{ asset('home-assets/images/icon-pricing-item-1.svg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/icon-pricing-item-1.svg') }}" alt="">
                                             </div>
                                             <div class="pricing-item-content">
                                                 <h2>Basic Plan</h2>
@@ -1229,7 +1229,7 @@
                                         <!-- Pricing Item Header Start -->
                                         <div class="pricing-item-header">
                                             <div class="icon-box">
-                                                <img src="{{ asset('home-assets/images/icon-pricing-item-2.svg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/icon-pricing-item-2.svg') }}" alt="">
                                             </div>
                                             <div class="pricing-item-content">
                                                 <h2>Standard Plan</h2>
@@ -1267,7 +1267,7 @@
                                         <!-- Pricing Item Header Start -->
                                         <div class="pricing-item-header">
                                             <div class="icon-box">
-                                                <img src="{{ asset('home-assets/images/icon-pricing-item-3.svg') }}" alt="">
+                                                <img src="{{ URL('home-assets/images/icon-pricing-item-3.svg') }}" alt="">
                                             </div>
                                             <div class="pricing-item-content">
                                                 <h2>Premium Plan</h2>
@@ -1309,9 +1309,9 @@
                     <!-- Pricing Benifit List Start -->
                     <div class="pricing-benefit-list wow fadeInUp" data-wow-delay="0.4s">
                         <ul>
-                            <li><img src="{{ asset('home-assets/images/icon-pricing-benefit-1.svg') }}" alt="">Get 30 day free trial</li>
-                            <li><img src="{{ asset('home-assets/images/icon-pricing-benefit-2.svg') }}" alt="">No any hidden fees pay</li>
-                            <li><img src="{{ asset('home-assets/images/icon-pricing-benefit-3.svg') }}" alt="">You can cancel anytime</li>
+                            <li><img src="{{ URL('home-assets/images/icon-pricing-benefit-1.svg') }}" alt="">Get 30 day free trial</li>
+                            <li><img src="{{ URL('home-assets/images/icon-pricing-benefit-2.svg') }}" alt="">No any hidden fees pay</li>
+                            <li><img src="{{ URL('home-assets/images/icon-pricing-benefit-3.svg') }}" alt="">You can cancel anytime</li>
                         </ul>
                     </div>
                     <!-- Pricing Benifit List End -->
@@ -1344,22 +1344,22 @@
                                 <div class="satisfy-client-images">
                                     <div class="satisfy-client-image">
                                         <figure class="image-anime">
-                                            <img src="{{ asset('home-assets/images/author-1.jpg') }}" alt="">
+                                            <img src="{{ URL('home-assets/images/author-1.jpg') }}" alt="">
                                         </figure>
                                     </div>
                                     <div class="satisfy-client-image">
                                         <figure class="image-anime">
-                                            <img src="{{ asset('home-assets/images/author-2.jpg') }}" alt="">
+                                            <img src="{{ URL('home-assets/images/author-2.jpg') }}" alt="">
                                         </figure>
                                     </div>
                                     <div class="satisfy-client-image">
                                         <figure class="image-anime">
-                                            <img src="{{ asset('home-assets/images/author-3.jpg') }}" alt="">
+                                            <img src="{{ URL('home-assets/images/author-3.jpg') }}" alt="">
                                         </figure>
                                     </div>
                                     <div class="satisfy-client-image">
                                         <figure class="image-anime">
-                                            <img src="{{ asset('home-assets/images/author-4.jpg') }}" alt="">
+                                            <img src="{{ URL('home-assets/images/author-4.jpg') }}" alt="">
                                         </figure>
                                     </div>
                                 </div>
@@ -1597,7 +1597,7 @@
                                         <div class="testimonial-item-author">
                                             <div class="testimonial-author-image">
                                                 <figure class="image-anime">
-                                                    <img src="{{ asset('home-assets/images/author-1.jpg') }}" alt="">
+                                                    <img src="{{ URL('home-assets/images/author-1.jpg') }}" alt="">
                                                 </figure>
                                             </div>
                                             <div class="testimonial-author-content">
@@ -1639,7 +1639,7 @@
                                         <div class="testimonial-item-author">
                                             <div class="testimonial-author-image">
                                                 <figure class="image-anime">
-                                                    <img src="{{ asset('home-assets/images/author-2.jpg') }}" alt="">
+                                                    <img src="{{ URL('home-assets/images/author-2.jpg') }}" alt="">
                                                 </figure>
                                             </div>
                                             <div class="testimonial-author-content">
@@ -1681,7 +1681,7 @@
                                         <div class="testimonial-item-author">
                                             <div class="testimonial-author-image">
                                                 <figure class="image-anime">
-                                                    <img src="{{ asset('home-assets/images/author-3.jpg') }}" alt="">
+                                                    <img src="{{ URL('home-assets/images/author-3.jpg') }}" alt="">
                                                 </figure>
                                             </div>
                                             <div class="testimonial-author-content">
@@ -1723,7 +1723,7 @@
                                         <div class="testimonial-item-author">
                                             <div class="testimonial-author-image">
                                                 <figure class="image-anime">
-                                                    <img src="{{ asset('home-assets/images/author-4.jpg') }}" alt="">
+                                                    <img src="{{ URL('home-assets/images/author-4.jpg') }}" alt="">
                                                 </figure>
                                             </div>
                                             <div class="testimonial-author-content">
@@ -1768,7 +1768,7 @@
                         <!-- Google Rating Box Start -->
                         <div class="google-rating-box">
                             <div class="google-rating-logo">
-                                <img src="{{ asset('home-assets/images/icon-google.svg') }}" alt="">
+                                <img src="{{ URL('home-assets/images/icon-google.svg') }}" alt="">
                             </div>
                             <div class="google-rating-info">
                                 <div class="google-rating-info-header">
@@ -1832,7 +1832,7 @@
                         <div class="post-featured-image">
                             <a href="/" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="{{ asset('home-assets/images/post-1.jpg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/post-1.jpg') }}" alt="">
                                 </figure>
                             </a>
                         </div>
@@ -1858,7 +1858,7 @@
                         <div class="post-featured-image">
                             <a href="/" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="{{ asset('home-assets/images/post-2.jpg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/post-2.jpg') }}" alt="">
                                 </figure>
                             </a>
                         </div>
@@ -1884,7 +1884,7 @@
                         <div class="post-featured-image">
                             <a href="/" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="{{ asset('home-assets/images/post-3.jpg') }}" alt="">
+                                    <img src="{{ URL('home-assets/images/post-3.jpg') }}" alt="">
                                 </figure>
                             </a>
                         </div>

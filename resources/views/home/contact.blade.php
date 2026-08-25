@@ -52,7 +52,7 @@
                                 <!-- Conatct Info Item Start -->
                                 <div class="contact-info-item wow fadeInUp" data-wow-delay="0.4s">
                                     <div class="icon-box">
-                                        <img src="{{ asset('home-assets/images/icon-phone-white.svg') }}" alt="">
+                                        <img src="{{ URL('home-assets/images/icon-phone-white.svg') }}" alt="">
                                     </div>
                                     <div class="contact-info-item-content">
                                         <p>Email Address</p>
@@ -64,7 +64,7 @@
                                 <!-- Conatct Info Item Start -->
                                 <div class="contact-info-item wow fadeInUp" data-wow-delay="0.6s">
                                     <div class="icon-box">
-                                        <img src="{{ asset('home-assets/images/icon-location-white.svg') }}" alt="">
+                                        <img src="{{ URL('home-assets/images/icon-location-white.svg') }}" alt="">
                                     </div>
                                     <div class="contact-info-item-content">
                                         <p>Our Address</p>
