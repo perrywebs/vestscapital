@@ -168,7 +168,7 @@ class HomeController extends Controller
     {
         return view('admin.Plans.activeinv', [
             'title' => 'Active Trades plans',
-            'plans' => User_plans::where('active', 'yes')->orderByDesc('id')->with(['dplan', 'duser'])->get(),
+            'plans' => Investment::orderByDesc('id')->with(['uplan', 'puser'])->get(),
         ]);
     }
 
@@ -380,7 +380,7 @@ class HomeController extends Controller
     {
         return view('admin.Users.user_plans')
             ->with(array(
-                'plans' => User_plans::where('user', $id)->orderBy('id', 'desc')->get(),
+                'investments' => Investment::where('user', $id)->orderBy('id', 'desc')->get(),
                 'user' => User::where('id', $id)->first(),
                 'title' => 'User Investment trades',
 

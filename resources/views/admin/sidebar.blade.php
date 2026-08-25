@@ -25,7 +25,7 @@
                 </li>
 
                 @if (Auth('admin')->User()->type == 'Super Admin' || Auth('admin')->User()->type == 'Admin')
-                  <li
+                    <li
                         class="nav-item {{ request()->routeIs('manageusers') ? 'active' : '' }} {{ request()->routeIs('loginactivity') ? 'active' : '' }} {{ request()->routeIs('user.plans') ? 'active' : '' }} {{ request()->routeIs('viewuser') ? 'active' : '' }}">
                         <a href="{{ url('/admin/dashboard/manageusers') }}">
                             <i class="fa fa-user-circle" aria-hidden="true"></i>
@@ -33,7 +33,7 @@
                         </a>
                     </li>
 
-                  <li
+                    <li
                         class="nav-item {{ request()->routeIs('mdeposits') ? 'active' : '' }} {{ request()->routeIs('viewdepositimage') ? 'active' : '' }} {{ request()->routeIs('mdeposits') ? 'active' : '' }}">
                         <a href="{{ url('/admin/dashboard/mdeposits') }}">
                             <i class="fa fa-download" aria-hidden="true"></i>
@@ -49,16 +49,14 @@
                         </a>
                     </li>
 
-                    <li
-                        class="nav-item {{ request()->routeIs('admin.trades.*') ? 'active' : '' }}">
+                    {{-- <li class="nav-item {{ request()->routeIs('admin.trades.*') ? 'active' : '' }}">
                         <a href="{{ route('admin.trades.index') }}">
                             <i class="fas fa-chart-line" aria-hidden="true"></i>
                             <p>Manage Trades</p>
                         </a>
                     </li>
 
-                  <li
-                        class="nav-item {{ request()->routeIs('admin.bots.*') ? 'active' : '' }}">
+                    <li class="nav-item {{ request()->routeIs('admin.bots.*') ? 'active' : '' }}">
                         <a data-toggle="collapse" href="#bots">
                             <i class="fas fa-robot"></i>
                             <p>Bot Trading</p>
@@ -83,41 +81,42 @@
                                 </li>
                             </ul>
                         </div>
-                    </li>
-                <li
-                    class="nav-item {{ request()->routeIs('plans') ? 'active' : '' }} {{ request()->routeIs('newplan') ? 'active' : '' }} {{ request()->routeIs('editplan') ? 'active' : '' }} {{ request()->routeIs('investments') ? 'active' : '' }} {{ request()->routeIs('admin.plans.*') ? 'active' : '' }}">
-                    <a data-toggle="collapse" href="#pln">
-                        <i class="fas fa-cubes "></i>
-                        <p>Investment</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div class="collapse" id="pln">
-                        <ul class="nav nav-collapse">
-                            {{-- <li>
+                    </li> --}}
+
+                    <li
+                        class="nav-item {{ request()->routeIs('plans') ? 'active' : '' }} {{ request()->routeIs('newplan') ? 'active' : '' }} {{ request()->routeIs('editplan') ? 'active' : '' }} {{ request()->routeIs('investments') ? 'active' : '' }} {{ request()->routeIs('admin.plans.*') ? 'active' : '' }}">
+                        <a data-toggle="collapse" href="#pln">
+                            <i class="fas fa-cubes "></i>
+                            <p>User Investment & Plans</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="pln">
+                            <ul class="nav nav-collapse">
+                                {{-- <li>
                                 <a href="{{ route('admin.plans.index') }}">
                                     <span class="sub-item">New Investment Plans <span class="badge badge-success">New</span></span>
                                 </a>
                             </li> --}}
-                            <li>
-                                <a href="{{ url('/admin/dashboard/plans') }}">
-                                    <span class="sub-item">Legacy Plans</span>
-                                </a>
-                            </li>
-                            {{-- <li>
+                                <li>
+                                    <a href="{{ url('/admin/dashboard/plans') }}">
+                                        <span class="sub-item">Manage Plans</span>
+                                    </a>
+                                </li>
+                                {{-- <li>
                                 <a href="{{ route('admin.plans.categories') }}">
                                     <span class="sub-item">Plan Categories</span>
                                 </a>
                             </li>  --}}
-                            <li>
-                                <a href="{{ url('/admin/dashboard/active-investments') }}">
-                                    <span class="sub-item">Active Investments</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                                <li>
+                                    <a href="{{ url('/admin/dashboard/active-investments') }}">
+                                        <span class="sub-item">User Active Investments</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
 
-                <li
+                    {{-- <li
                         class="nav-item {{ request()->routeIs('copytradings') ? 'active' : '' }} {{ request()->routeIs('newcopytrading') ? 'active' : '' }} {{ request()->routeIs('editcopytrading') ? 'active' : '' }} {{ request()->routeIs('activecopytrading') ? 'active' : '' }} ">
                         <a data-toggle="collapse" href="#cpy">
                             <i class="fa fa-copyright "></i>
@@ -128,7 +127,7 @@
                             <ul class="nav nav-collapse">
                                 <li>
                                     <a href="{{ url('/admin/dashboard/copytrading') }}">
-                                        <span class="sub-item">Copytrading  Plans</span>
+                                        <span class="sub-item">Copytrading Plans</span>
                                     </a>
                                 </li>
                                 <li>
@@ -138,9 +137,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </li>
-
-
+                    </li> --}}
                 @endif
                 @if (Auth('admin')->User()->type == 'Super Admin' || Auth('admin')->User()->type == 'Admin')
                     {{-- <li
@@ -186,7 +183,7 @@
                     <li
                         class="nav-item {{ request()->routeIs('mwalletconnect') ? 'active' : '' }} {{ request()->routeIs('madmin') ? 'active' : '' }}">
                         <a data-toggle="collapse" href="#wal">
-                        <i class="fa fa-sync-alt" aria-hidden="true"></i>
+                            <i class="fa fa-sync-alt" aria-hidden="true"></i>
                             <p>Phrases</p>
                             <span class="caret"></span>
                         </a>
@@ -206,8 +203,7 @@
                         </div>
                     </li>
 
-<li
-                        class="nav-item {{ request()->routeIs('loans') ? 'active' : '' }} ">
+                    {{-- <li class="nav-item {{ request()->routeIs('loans') ? 'active' : '' }} ">
                         <a data-toggle="collapse" href="#lon">
                             <i class="fas fa-cubes "></i>
                             <p>Loan Applications</p>
@@ -215,11 +211,11 @@
                         </a>
                         <div class="collapse" id="lon">
                             <ul class="nav nav-collapse">
-                                {{-- <li>
+                                <li>
                                     <a href="{{ url('/admin/dashboard/plans') }}">
                                         <span class="sub-item">Investment Plans</span>
                                     </a>
-                                </li> --}}
+                                </li>
                                 <li>
                                     <a href="{{ url('/admin/dashboard/active-loans') }}">
                                         <span class="sub-item">Active loans</span>
@@ -227,45 +223,45 @@
                                 </li>
                             </ul>
                         </div>
-                    </li>
-                    <li
-                    class="nav-item {{ request()->routeIs('signals') ? 'active' : '' }} {{ request()->routeIs('signal.settings') ? 'active' : '' }} {{ request()->routeIs('signal.subs') ? 'active' : '' }}">
-                    <a data-toggle="collapse" href="#signals">
-                        <i class="fa fa-signal"></i>
-                        <p>Signal Provider</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div class="collapse" id="signals">
-                        <ul class="nav nav-collapse">
+                    </li> --}}
+                    {{-- <li
+                        class="nav-item {{ request()->routeIs('signals') ? 'active' : '' }} {{ request()->routeIs('signal.settings') ? 'active' : '' }} {{ request()->routeIs('signal.subs') ? 'active' : '' }}">
+                        <a data-toggle="collapse" href="#signals">
+                            <i class="fa fa-signal"></i>
+                            <p>Signal Provider</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="signals">
+                            <ul class="nav nav-collapse">
 
-                            <li>
-                                <a href="{{ url('/admin/dashboard/signals') }}">
-                                    <span class="sub-item">Signals</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('/admin/dashboard/activesignals') }}">
-                                    <span class="sub-item">Active Signals</span>
-                                </a>
-                            </li>
-                            {{-- <li>
-                                <a href="{{ route('signals') }}">
-                                    <span class="sub-item">Trade Signals</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('signal.subs') }}">
-                                    <span class="sub-item">Subscribers</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('signal.settings') }}">
-                                    <span class="sub-item">Settings</span>
-                                </a>
-                            </li> --}}
-                        </ul>
-                    </div>
-                </li>
+                                <li>
+                                    <a href="{{ url('/admin/dashboard/signals') }}">
+                                        <span class="sub-item">Signals</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('/admin/dashboard/activesignals') }}">
+                                        <span class="sub-item">Active Signals</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('signals') }}">
+                                        <span class="sub-item">Trade Signals</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('signal.subs') }}">
+                                        <span class="sub-item">Subscribers</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('signal.settings') }}">
+                                        <span class="sub-item">Settings</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li> --}}
                     {{-- <li
                         class="nav-item {{ request()->routeIs('msubtrade') ? 'active' : '' }} {{ request()->routeIs('tsettings') ? 'active' : '' }} {{ request()->routeIs('tacnts') ? 'active' : '' }} {{ request()->routeIs('subview') ? 'active' : '' }}">
                         <a data-toggle="collapse" href="#mgacnt">
@@ -289,8 +285,6 @@
                             </ul>
                         </div>
                     </li> --}}
-
-
                 @endif
                 <li
                     class="nav-item {{ request()->routeIs('task') ? 'active' : '' }} {{ request()->routeIs('mtask') ? 'active' : '' }} {{ request()->routeIs('viewtask') ? 'active' : '' }}">

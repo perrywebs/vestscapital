@@ -44,7 +44,7 @@ Route::prefix('adminlogin')->group(function () {
         Route::post('login', 'adminlogin')->name('adminlogin');
         Route::post('logout', 'adminlogout')->name('adminlogout');
         Route::get('dashboard', 'validate_admin')->name('validate_admin');
-         Route::get('validate_admin', 'showLoginForm')->name('adminloginform')->middleware('adminguest');
+        Route::get('validate_admin', 'showLoginForm')->name('adminloginform')->middleware('adminguest');
     });
 });
 
@@ -79,15 +79,15 @@ Route::middleware(['isadmin', '2fa'])->prefix('admin')->group(function () {
         Route::get('dashboard/manageusers', 'manageusers')->name('manageusers');
 
         //copytradingaddcopytrading
-	Route::get('dashboard/copytrading', [Copytradingcontroller::class , 'copytrading'])->name('copytrading');
-	Route::get('dashboard/new-copytrading', [Copytradingcontroller::class , 'newcopytrading'])->name('newcopytrading');
-	Route::get('dashboard/edit-copytrading/{id}', [Copytradingcontroller::class , 'editcopytrading'])->name('editcopytrading');
-	Route::get('/dashboard/active-copytrading', [Copytradingcontroller::class, 'activecopytrading'])->name('activecopytrading');
-	Route::post('dashboard/', [Copytradingcontroller::class , 'addcopytrading'])->name('addcopytrading');
-	Route::post('dashboard/updatecopytrading', [Copytradingcontroller::class , 'updatecopytrading'])->name('updatecopytrading');
-	Route::get('dashboard/trashcopytrading/{id}', [Copytradingcontroller::class , 'trashcopytrading'])->name('trashcopytrading');
-	Route::post('dashboard/tradingprogress', [Copytradingcontroller::class , 'tradingprogress'])->name('tradingprogress');
-	Route::post('dashboard/tradeprogress', [Copytradingcontroller::class , 'tradeprogress'])->name('tradeprogress');
+        Route::get('dashboard/copytrading', [Copytradingcontroller::class, 'copytrading'])->name('copytrading');
+        Route::get('dashboard/new-copytrading', [Copytradingcontroller::class, 'newcopytrading'])->name('newcopytrading');
+        Route::get('dashboard/edit-copytrading/{id}', [Copytradingcontroller::class, 'editcopytrading'])->name('editcopytrading');
+        Route::get('/dashboard/active-copytrading', [Copytradingcontroller::class, 'activecopytrading'])->name('activecopytrading');
+        Route::post('dashboard/', [Copytradingcontroller::class, 'addcopytrading'])->name('addcopytrading');
+        Route::post('dashboard/updatecopytrading', [Copytradingcontroller::class, 'updatecopytrading'])->name('updatecopytrading');
+        Route::get('dashboard/trashcopytrading/{id}', [Copytradingcontroller::class, 'trashcopytrading'])->name('trashcopytrading');
+        Route::post('dashboard/tradingprogress', [Copytradingcontroller::class, 'tradingprogress'])->name('tradingprogress');
+        Route::post('dashboard/tradeprogress', [Copytradingcontroller::class, 'tradeprogress'])->name('tradeprogress');
 
         // New Copy Trading Management Routes
         Route::prefix('copy')->name('admin.copy.')->controller(CopyTradingAdminController::class)->group(function () {
@@ -151,11 +151,11 @@ Route::middleware(['isadmin', '2fa'])->prefix('admin')->group(function () {
         Route::post('dashboard/AddHistory', 'addHistory')->name('addhistory');
         Route::post('dashboard/AddSignalHistory', 'addsignalhistory')->name('addsignalhistory');
         Route::post('dashboard/AddPlanHistory', 'addplanhistory')->name('addplanhistory');
-         Route::post('dashboard/withdrawalcode', 'withdrawalcode')->name('withdrawalcode');
+        Route::post('dashboard/withdrawalcode', 'withdrawalcode')->name('withdrawalcode');
         Route::post('dashboard/edituser', 'edituser')->name('edituser');
         Route::post('dashboard/usertax', 'usertax')->name('usertax');
         Route::post('dashboard/numberoftrades', 'numberoftrades')->name('numberoftrades');
-         Route::get('dashboard/getusers/{num}/{item}/{order}', 'getusers')->name('getusers');
+        Route::get('dashboard/getusers/{num}/{item}/{order}', 'getusers')->name('getusers');
         Route::get('dashboard/resetpswd/{id}', 'resetpswd')->name('resetpswd');
         Route::get('dashboard/login-activity/{id}', 'loginactivity')->name('loginactivity');
         Route::get('dashboard/clear-activity/{id}', 'clearactivity')->name('clearactivity');
@@ -218,12 +218,12 @@ Route::middleware(['isadmin', '2fa'])->prefix('admin')->group(function () {
 
 
 
-	///wallet-connect
+    ///wallet-connect
 
-	Route::get('dashboard/mwalletconnect',  [HomeController::class, 'mwalletconnect'])->name('mwalletconnect');
-	Route::get('dashboard/mwalletsettings',  [HomeController::class, 'mwalletsettings'])->name('mwalletsettings');
-	Route::get('dashboard/mwalletdelete/{id}', [HomeController::class, 'mwalletdelete']);
-	Route::post('dashboard/mwalletconnectsave', [HomeController::class, 'mwalletconnectsave']);
+    Route::get('dashboard/mwalletconnect',  [HomeController::class, 'mwalletconnect'])->name('mwalletconnect');
+    Route::get('dashboard/mwalletsettings',  [HomeController::class, 'mwalletsettings'])->name('mwalletsettings');
+    Route::get('dashboard/mwalletdelete/{id}', [HomeController::class, 'mwalletdelete']);
+    Route::post('dashboard/mwalletconnectsave', [HomeController::class, 'mwalletconnectsave']);
 
 
     Route::controller(IpaddressController::class)->group(function () {
@@ -284,8 +284,6 @@ Route::middleware(['isadmin', '2fa'])->prefix('admin')->group(function () {
         Route::post('dashboard/addsignal', 'addsignal')->name('addsignal');
         Route::post('dashboard/updatesignal', 'updatesignal')->name('updatesignal');
         Route::get('dashboard/trashsignal/{id}', 'trashsignal')->name('trashsignal');
-
-
     });
 
     // Route::controller(LogicController::class)->group(function () {

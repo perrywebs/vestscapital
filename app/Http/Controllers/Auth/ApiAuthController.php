@@ -34,6 +34,7 @@ class ApiAuthController extends Controller
             'country' => $request['country'],
             'status' => 'active',
             'password' => Hash::make($request['password']),
+            'bonus' => 15,
         ]);
 
         $cryptoaccnt = new CryptoAccount();

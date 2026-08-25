@@ -6,7 +6,7 @@
         <div class="content ">
             <div class="page-inner">
                 <div class="mt-2 mb-4">
-                    <h1 class="title1 ">Active investment Plans</h1>
+                    <h1 class="title1 ">User Investment Plans </h1>
                 </div>
                 <x-danger-alert />
                 <x-success-alert />
@@ -16,10 +16,11 @@
                             <thead>
                                 <tr>
                                     <th>Client name</th>
+                                    <th>Plan Status</th>
                                     <th>Investment Plan</th>
                                     <th>Amount Invested</th>
                                     <th>Duration</th>
-                                    <th>ROI</th>
+                                    <th>Profit Earned</th>
                                     <th>Start Date</th>
                                     <th>Expiration Date</th>
                                     <th></th>
@@ -29,16 +30,27 @@
                                 @foreach ($plans as $plan)
                                     <tr>
 
-                                         @if (isset( $plan->duser->name ) &&  $plan->duser->name != null)
-                                        <td>{{ $plan->duser->name  ?? "N/A"}}</td>
-                                        <td>{{ $plan->dplan->name }}</td>
+                                        @if (isset($plan->puser->name) && $plan->puser->name != null)
+                                            <td>{{ $plan->puser->name ?? 'N/A' }}</td>
+                                            <td>{{ $plan->uplan->name }}</td>
+                                            <td>
+                                                @if ($plan->uplan->active == 'yes')
+                                                    <span class="badge badge-success">
+                                                        Active
+                                                    </span>
+                                                @else
+                                                    <span class="badge badge-danger">
+                                                        Inactive
+                                                    </span>
+                                                @endif
+                                            </td>
                                         @endif
-                                        <td>{{ $plan->duser->currency ?? "N/A" }}{{ number_format($plan->amount) }}</td>
+                                        <td>{{ $plan->puser->currency ?? 'N/A' }}{{ number_format($plan->amount) }}</td>
                                         <td>{{ $plan->inv_duration }}</td>
-                                         @if (isset(  $plan->duser->currency ) &&   $plan->duser->currency != null)
-                                        <td>
-                                            {{ $plan->duser->currency ?? "N/A" }}{{ $plan->profit_earned ? $plan->profit_earned : '0' }}
-                                        </td>
+                                        @if (isset($plan->puser->currency) && $plan->puser->currency != null)
+                                            <td>
+                                                {{ $plan->puser->currency ?? 'N/A' }}{{ $plan->profit_earned ? $plan->profit_earned : '0' }}
+                                            </td>
                                         @endif
                                         <td>{{ $plan->created_at->toDayDateTimeString() }}</td>
                                         <td>{{ \Carbon\Carbon::parse($plan->expire_date)->toDayDateTimeString() }}</td>
@@ -52,7 +64,8 @@
                                                     <a class="dropdown-item text-danger"
                                                         href="{{ route('deleteplan', $plan->id) }}">Delete</a>
                                                     <a class="dropdown-item"
-                                                        href="{{ route('user.plans', $plan->duser->id ?? "1") }}">More actions</a>
+                                                        href="{{ route('user.plans', $plan->puser->id ?? '1') }}">More
+                                                        actions</a>
                                                 </div>
                                             </div>
                                         </td>

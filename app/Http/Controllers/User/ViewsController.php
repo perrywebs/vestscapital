@@ -481,11 +481,11 @@ class ViewsController extends Controller
     public function planDetails($id)
     {
 
-        $plan =  investment::find($id);
+        $plan =  Investment::find($id);
         return view("user.plandetails", [
             'title' => $plan->uplan->name ,
             'plan' => $plan,
-            'transactions' => Tp_Transaction::where('type', 'ROI')->where('user_plan_id', $plan->id)->orderByDesc('id')->paginate(10),
+            'transactions' => Tp_Transaction::where('user_plan_id', $plan->id)->orderByDesc('id')->paginate(10),
         ]);
     }
 

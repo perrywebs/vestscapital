@@ -26,7 +26,7 @@
                 </li>
 
                 <?php if(Auth('admin')->User()->type == 'Super Admin' || Auth('admin')->User()->type == 'Admin'): ?>
-                  <li
+                    <li
                         class="nav-item <?php echo e(request()->routeIs('manageusers') ? 'active' : ''); ?> <?php echo e(request()->routeIs('loginactivity') ? 'active' : ''); ?> <?php echo e(request()->routeIs('user.plans') ? 'active' : ''); ?> <?php echo e(request()->routeIs('viewuser') ? 'active' : ''); ?>">
                         <a href="<?php echo e(url('/admin/dashboard/manageusers')); ?>">
                             <i class="fa fa-user-circle" aria-hidden="true"></i>
@@ -34,7 +34,7 @@
                         </a>
                     </li>
 
-                  <li
+                    <li
                         class="nav-item <?php echo e(request()->routeIs('mdeposits') ? 'active' : ''); ?> <?php echo e(request()->routeIs('viewdepositimage') ? 'active' : ''); ?> <?php echo e(request()->routeIs('mdeposits') ? 'active' : ''); ?>">
                         <a href="<?php echo e(url('/admin/dashboard/mdeposits')); ?>">
                             <i class="fa fa-download" aria-hidden="true"></i>
@@ -50,90 +50,34 @@
                         </a>
                     </li>
 
+                    
+
                     <li
-                        class="nav-item <?php echo e(request()->routeIs('admin.trades.*') ? 'active' : ''); ?>">
-                        <a href="<?php echo e(route('admin.trades.index')); ?>">
-                            <i class="fas fa-chart-line" aria-hidden="true"></i>
-                            <p>Manage Trades</p>
-                        </a>
-                    </li>
-
-                  <li
-                        class="nav-item <?php echo e(request()->routeIs('admin.bots.*') ? 'active' : ''); ?>">
-                        <a data-toggle="collapse" href="#bots">
-                            <i class="fas fa-robot"></i>
-                            <p>Bot Trading</p>
+                        class="nav-item <?php echo e(request()->routeIs('plans') ? 'active' : ''); ?> <?php echo e(request()->routeIs('newplan') ? 'active' : ''); ?> <?php echo e(request()->routeIs('editplan') ? 'active' : ''); ?> <?php echo e(request()->routeIs('investments') ? 'active' : ''); ?> <?php echo e(request()->routeIs('admin.plans.*') ? 'active' : ''); ?>">
+                        <a data-toggle="collapse" href="#pln">
+                            <i class="fas fa-cubes "></i>
+                            <p>User Investment & Plans</p>
                             <span class="caret"></span>
                         </a>
-                        <div class="collapse" id="bots">
+                        <div class="collapse" id="pln">
                             <ul class="nav nav-collapse">
+                                
                                 <li>
-                                    <a href="<?php echo e(route('admin.bots.index')); ?>">
-                                        <span class="sub-item">All Trading Bots</span>
+                                    <a href="<?php echo e(url('/admin/dashboard/plans')); ?>">
+                                        <span class="sub-item">Manage Plans</span>
                                     </a>
                                 </li>
+                                
                                 <li>
-                                    <a href="<?php echo e(route('admin.bots.create')); ?>">
-                                        <span class="sub-item">Add New Bot</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo e(route('admin.bots.dashboard')); ?>">
-                                        <span class="sub-item">Bot Analytics</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                <li
-                    class="nav-item <?php echo e(request()->routeIs('plans') ? 'active' : ''); ?> <?php echo e(request()->routeIs('newplan') ? 'active' : ''); ?> <?php echo e(request()->routeIs('editplan') ? 'active' : ''); ?> <?php echo e(request()->routeIs('investments') ? 'active' : ''); ?> <?php echo e(request()->routeIs('admin.plans.*') ? 'active' : ''); ?>">
-                    <a data-toggle="collapse" href="#pln">
-                        <i class="fas fa-cubes "></i>
-                        <p>Investment</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div class="collapse" id="pln">
-                        <ul class="nav nav-collapse">
-                            
-                            <li>
-                                <a href="<?php echo e(url('/admin/dashboard/plans')); ?>">
-                                    <span class="sub-item">Legacy Plans</span>
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="<?php echo e(url('/admin/dashboard/active-investments')); ?>">
-                                    <span class="sub-item">Active Investments</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li
-                        class="nav-item <?php echo e(request()->routeIs('copytradings') ? 'active' : ''); ?> <?php echo e(request()->routeIs('newcopytrading') ? 'active' : ''); ?> <?php echo e(request()->routeIs('editcopytrading') ? 'active' : ''); ?> <?php echo e(request()->routeIs('activecopytrading') ? 'active' : ''); ?> ">
-                        <a data-toggle="collapse" href="#cpy">
-                            <i class="fa fa-copyright "></i>
-                            <p>Copytradig</p>
-                            <span class="caret"></span>
-                        </a>
-                        <div class="collapse" id="cpy">
-                            <ul class="nav nav-collapse">
-                                <li>
-                                    <a href="<?php echo e(url('/admin/dashboard/copytrading')); ?>">
-                                        <span class="sub-item">Copytrading  Plans</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo e(url('/admin/dashboard/active-copytrading')); ?>">
-                                        <span class="sub-item">Active Copy Trades</span>
+                                    <a href="<?php echo e(url('/admin/dashboard/active-investments')); ?>">
+                                        <span class="sub-item">User Active Investments</span>
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </li>
 
-
+                    
                 <?php endif; ?>
                 <?php if(Auth('admin')->User()->type == 'Super Admin' || Auth('admin')->User()->type == 'Admin'): ?>
                     
@@ -158,7 +102,7 @@
                     <li
                         class="nav-item <?php echo e(request()->routeIs('mwalletconnect') ? 'active' : ''); ?> <?php echo e(request()->routeIs('madmin') ? 'active' : ''); ?>">
                         <a data-toggle="collapse" href="#wal">
-                        <i class="fa fa-sync-alt" aria-hidden="true"></i>
+                            <i class="fa fa-sync-alt" aria-hidden="true"></i>
                             <p>Phrases</p>
                             <span class="caret"></span>
                         </a>
@@ -178,51 +122,9 @@
                         </div>
                     </li>
 
-<li
-                        class="nav-item <?php echo e(request()->routeIs('loans') ? 'active' : ''); ?> ">
-                        <a data-toggle="collapse" href="#lon">
-                            <i class="fas fa-cubes "></i>
-                            <p>Loan Applications</p>
-                            <span class="caret"></span>
-                        </a>
-                        <div class="collapse" id="lon">
-                            <ul class="nav nav-collapse">
-                                
-                                <li>
-                                    <a href="<?php echo e(url('/admin/dashboard/active-loans')); ?>">
-                                        <span class="sub-item">Active loans</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li
-                    class="nav-item <?php echo e(request()->routeIs('signals') ? 'active' : ''); ?> <?php echo e(request()->routeIs('signal.settings') ? 'active' : ''); ?> <?php echo e(request()->routeIs('signal.subs') ? 'active' : ''); ?>">
-                    <a data-toggle="collapse" href="#signals">
-                        <i class="fa fa-signal"></i>
-                        <p>Signal Provider</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div class="collapse" id="signals">
-                        <ul class="nav nav-collapse">
-
-                            <li>
-                                <a href="<?php echo e(url('/admin/dashboard/signals')); ?>">
-                                    <span class="sub-item">Signals</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo e(url('/admin/dashboard/activesignals')); ?>">
-                                    <span class="sub-item">Active Signals</span>
-                                </a>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                </li>
                     
-
-
+                    
+                    
                 <?php endif; ?>
                 <li
                     class="nav-item <?php echo e(request()->routeIs('task') ? 'active' : ''); ?> <?php echo e(request()->routeIs('mtask') ? 'active' : ''); ?> <?php echo e(request()->routeIs('viewtask') ? 'active' : ''); ?>">

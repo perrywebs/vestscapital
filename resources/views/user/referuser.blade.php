@@ -26,7 +26,7 @@
                 <h1 class="text-2xl sm:text-3xl font-bold text-white mb-2">Referral Program</h1>
                 <p class="text-gray-400 text-sm sm:text-base">Grow your network and earn rewards with {{ $settings->site_name }}</p>
             </div>
-            <div class="flex flex-wrap gap-2">
+            {{-- <div class="flex flex-wrap gap-2">
                 <button @click="showShareModal = true"
                         class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 text-sm font-medium">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -41,7 +41,7 @@
                     </svg>
                     QR Code
                 </button>
-            </div>
+            </div> --}}
         </div>
     </div>
 
@@ -67,12 +67,12 @@
         <div class="bg-gray-900 rounded-xl p-4 sm:p-6 border border-gray-800">
             <div class="flex items-center justify-between">
                 <div>
-                    <p class="text-gray-400 text-xs sm:text-sm font-medium">Total Earnings</p>
-                    <p class="text-white text-xl sm:text-2xl font-bold mt-1">${{ number_format(Auth::user()->ref_earnings ?? 0, 2) }}</p>
+                    <p class="text-gray-400 text-xs sm:text-sm font-medium">Total REF Bonus</p>
+                    <p class="text-white text-xl sm:text-2xl font-bold mt-1">${{ number_format(Auth::user()->ref_bonus ?? 0, 2) }}</p>
                 </div>
                 <div class="bg-green-600/10 p-2 sm:p-3 rounded-lg">
                     <svg class="w-5 h-5 sm:w-6 sm:h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1">
                     </svg>
                 </div>
             </div>

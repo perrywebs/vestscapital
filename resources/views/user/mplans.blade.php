@@ -34,12 +34,12 @@
                 <p class="text-gray-600 dark:text-gray-300">Upgrade your account with our high-yield investment opportunities</p>
             </div>
             <div class="mt-4 md:mt-0">
-                <span class="inline-flex items-center px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
+                <a href="{{ route('myplans.default') }}" class="inline-flex items-center px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                     </svg>
-                    Grow Your Portfolio
-                </span>
+                    Go To Your Portfolio
+                </a>
             </div>
         </div>
     </div>
@@ -283,32 +283,6 @@
                 <div>
                     <h4 class="text-lg font-medium text-gray-900 dark:text-white mb-1">Earn returns</h4>
                     <p class="text-gray-600 dark:text-gray-400 text-sm">Watch your investment grow with competitive returns deposited directly to your account.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal for No Plans -->
-<div id="withdrawdisabled" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="noPlansModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700">
-            <div class="p-6">
-                <div class="flex items-center justify-center mb-4">
-                    <div class="w-12 h-12 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-yellow-600 dark:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                        </svg>
-                    </div>
-                </div>
-                <h3 class="text-xl font-bold text-center text-gray-900 dark:text-white mb-2" id="noPlansModalTitle">No Plans Available</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-center mb-6">
-                    There are currently no investment plans available. Please check back later.
-                </p>
-                <div class="flex justify-center">
-                    <button type="button" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200" data-bs-dismiss="modal">
-                        Close
-                    </button>
                 </div>
             </div>
         </div>

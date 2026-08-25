@@ -30,6 +30,7 @@ use App\Traits\PingServer;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
+
 class ManageUsersController extends Controller
 {
     use PingServer;
@@ -100,7 +101,7 @@ class ManageUsersController extends Controller
 
     public function markplanas($status, $id)
     {
-        User_plans::where('id', $id)->update([
+        Investment::where('id', $id)->update([
             'active' => $status,
         ]);
         return redirect()->back()
@@ -128,16 +129,16 @@ class ManageUsersController extends Controller
     public function viewuser($id)
     {
         $user = User::where('id', $id)->first();
-        $plans = Plans::where('type','main')->get();
-        $signals = Signal::where('type','main')->get();
+        $plans = Plans::where('type', 'main')->get();
+        $signals = Signal::where('type', 'main')->get();
         include 'currencies.php';
         return view('admin.Users.userdetails', [
             'user' => $user,
             'currencies' => $currencies,
             'pl' => Plans::orderByDesc('id')->get(),
             'title' => "Manage $user->name",
-            'plans' =>$plans,
-            'signals'=>$signals,
+            'plans' => $plans,
+            'signals' => $signals,
         ]);
     }
     //ban/disable user
@@ -263,10 +264,10 @@ class ManageUsersController extends Controller
         $expire = $request->expire;
         $type = $request->type;
         $trade_type = $request->tradetype;
-        $expiration =  explode(" ",$request['expire']);
+        $expiration =  explode(" ", $request['expire']);
         $digit = $expiration[0];
         $frame = $expiration[1];
-        $toexpire =  "add". $frame;
+        $toexpire =  "add" . $frame;
         $end_at = Carbon::now()->$toexpire($digit)->toDateTimeString();
 
         // Initialize notification service
@@ -279,9 +280,9 @@ class ManageUsersController extends Controller
             'amount' => $amount,
             'active' => 'expired',
             'assets' => $asset,
-            'leverage' =>$leverage,
-            'inv_duration'=>$request['expire'],
-            'type'=> $trade_type,
+            'leverage' => $leverage,
+            'inv_duration' => $request['expire'],
+            'type' => $trade_type,
             'expire_date' => $end_at,
             'activated_at' => \Carbon\Carbon::now(),
             'last_growth' => \Carbon\Carbon::now(),
@@ -293,75 +294,71 @@ class ManageUsersController extends Controller
         Tp_Transaction::create([
             'user' => $user->id,
             'plan' => $asset,
-            'amount'=>$amount,
-            'type'=>$trade_type,
-            'leverage'=>$leverage,
+            'amount' => $amount,
+            'type' => $trade_type,
+            'leverage' => $leverage,
         ]);
 
-        if($request->type=='WIN'){
-            $profit = $leverage * $amount*0.01;
+        if ($request->type == 'WIN') {
+            $profit = $leverage * $amount * 0.01;
 
 
-                        User::where('id', $user->id)
-                    ->update([
-                        'roi' =>  $user_roi + $profit,
-                    ]);
+            User::where('id', $user->id)
+                ->update([
+                    'roi' =>  $user_roi + $profit,
+                ]);
 
-                    // Create notification for profitable trade
-                    $notificationService->createUserNotification(
-                        $user->id,
-                        'Trade Profit',
-                        "You earned a profit of {$profit} from a {$asset} trade with {$leverage}x leverage.",
-                        'success',
-                        $userplanid,
-                        'App\\Models\\User_plans'
-                    );
+            // Create notification for profitable trade
+            $notificationService->createUserNotification(
+                $user->id,
+                'Trade Profit',
+                "You earned a profit of {$profit} from a {$asset} trade with {$leverage}x leverage.",
+                'success',
+                $userplanid,
+                'App\\Models\\User_plans'
+            );
 
-                    //create history
-                    Tp_Transaction::create([
-                        'user' => $user->id,
-                        'plan' => $asset,
-                        'amount'=>$profit,
-                        'type'=>'WIN',
-                        'leverage'=> $leverage,
-                    ]);
-
-
-
-        }else{
-                         $loss = (100-$leverage)*$amount*0.01;
+            //create history
+            Tp_Transaction::create([
+                'user' => $user->id,
+                'plan' => $asset,
+                'amount' => $profit,
+                'type' => 'WIN',
+                'leverage' => $leverage,
+            ]);
+        } else {
+            $loss = (100 - $leverage) * $amount * 0.01;
 
 
-                         $amountloss = ($leverage)*$amount*0.01;
-                            User::where('id', $user->id)
-                            ->update([
-                                'account_bal' =>$user_bal - $amountloss,
-                            ]);
+            $amountloss = ($leverage) * $amount * 0.01;
+            User::where('id', $user->id)
+                ->update([
+                    'account_bal' => $user_bal - $amountloss,
+                ]);
 
-                            // Create notification for loss trade
-                            $notificationService->createUserNotification(
-                                $user->id,
-                                'Trade Loss',
-                                "Your {$asset} trade with {$leverage}x leverage resulted in a loss of {$amountloss}.",
-                                'danger',
-                                $userplanid,
-                                'App\\Models\\User_plans'
-                            );
+            // Create notification for loss trade
+            $notificationService->createUserNotification(
+                $user->id,
+                'Trade Loss',
+                "Your {$asset} trade with {$leverage}x leverage resulted in a loss of {$amountloss}.",
+                'danger',
+                $userplanid,
+                'App\\Models\\User_plans'
+            );
 
-                            Tp_Transaction::create([
-                                'user' => $user->id,
-                                'plan' => $asset,
-                                'amount'=>$amountloss,
-                                'type'=>'LOSE',
-                                'leverage'=> $leverage,
-                            ]);
-
+            Tp_Transaction::create([
+                'user' => $user->id,
+                'plan' => $asset,
+                'amount' => $amountloss,
+                'type' => 'LOSE',
+                'leverage' => $leverage,
+            ]);
         }
 
         // Notify admins about the manual trade addition
         $adminTitle = 'Manual Trade Added';
         $adminMessage = "Admin " . Auth::guard('admin')->user()->name . " added a " .
-                        ($type == 'WIN' ? 'profit' : 'loss') . " trade of {$amount} {$asset} with {$leverage}x leverage for user {$user->name}.";
+            ($type == 'WIN' ? 'profit' : 'loss') . " trade of {$amount} {$asset} with {$leverage}x leverage for user {$user->name}.";
 
         $notificationService->createAdminNotification(
             Auth::guard('admin')->id(),
@@ -377,82 +374,82 @@ class ManageUsersController extends Controller
     }
 
 
-//Manually Add Plan History to Users Route
-public function addplanhistory(Request $request)
-{
-    Tp_Transaction::create([
-        'user' => $request->user_id,
-        'plan' => $request->plan,
-        'amount' => $request->amount,
-        'type' => $request->type,
-    ]);
-    $user = User::where('id', $request->user_id)->first();
-    $user_bal = $user->account_bal;
+    //Manually Add Plan History to Users Route
+    public function addplanhistory(Request $request)
+    {
+        Tp_Transaction::create([
+            'user' => $request->user_id,
+            'plan' => $request->plan,
+            'amount' => $request->amount,
+            'type' => $request->type,
+        ]);
+        $user = User::where('id', $request->user_id)->first();
+        $user_bal = $user->account_bal;
 
-    // if (isset($request['amount']) > 0) {
-    //     User::where('id', $request->user_id)
-    //         ->update([
-    //             'account_bal' => $user_bal + $request->amount,
-    //         ]);
-    // }
-    $user_roi = $user->roi;
-    if (isset($request['type']) == "ROI") {
-        User::where('id', $request->user_id)
-            ->update([
-                'roi' => $user_roi + $request->amount,
-            ]);
+        // if (isset($request['amount']) > 0) {
+        //     User::where('id', $request->user_id)
+        //         ->update([
+        //             'account_bal' => $user_bal + $request->amount,
+        //         ]);
+        // }
+        $user_roi = $user->roi;
+        if (isset($request['type']) == "ROI") {
+            User::where('id', $request->user_id)
+                ->update([
+                    'roi' => $user_roi + $request->amount,
+                ]);
+        }
+
+        return redirect()->back()
+            ->with('success', 'Action Sucessful!');
     }
 
-    return redirect()->back()
-        ->with('success', 'Action Sucessful!');
-}
 
 
 
+    //Manually Add Signal History to Users Route
+    public function addsignalhistory(Request $request)
+    {
 
-//Manually Add Signal History to Users Route
-public function addsignalhistory(Request $request)
-{
+        $user = User::where('id', $request->user_id)->first();
+        $signal = Signal::where('name', $user->signals)->first();
 
-    $user = User::where('id', $request->user_id)->first();
-    $signal = Signal::where('name', $user->signals)->first();
+        $signalid = $signal->id;
+        $amount = $request->amount;
+        $leverage = $request->leverage;
+        $asset = $request->asset;
+        $expire = $request->expire;
+        $order_type = $request->order_type;
 
-    $signalid = $signal->id;
-    $amount = $request->amount;
-    $leverage = $request->leverage;
-    $asset = $request->asset;
-    $expire = $request->expire;
-    $order_type = $request->order_type;
-
-     //save trade into user_plans table
-      DB::table('user_signals')->insertGetId([
-        'signals' =>  $signalid,
-        'user' => $user->id,
-        'amount' => $amount,
-        'asset' => $asset,
-        'expiration' => $expire,
-        'status'=>'ongoing',
-        'leverage' =>$leverage,
-        'order_type'=> $order_type,
-        'created_at' => \Carbon\Carbon::now(),
-        'updated_at' => \Carbon\Carbon::now(),
-    ]);
-
+        //save trade into user_plans table
+        DB::table('user_signals')->insertGetId([
+            'signals' =>  $signalid,
+            'user' => $user->id,
+            'amount' => $amount,
+            'asset' => $asset,
+            'expiration' => $expire,
+            'status' => 'ongoing',
+            'leverage' => $leverage,
+            'order_type' => $order_type,
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+        ]);
 
 
-    // if (isset($request['amount']) > 0) {
-    //     User::where('id', $request->user_id)
-    //         ->update([
-    //             'account_bal' => $user_bal + $request->amount,
-    //         ]);
-    // }
 
-    return redirect()->back()
-        ->with('success', 'Signal Created Sucessful!');
-}
+        // if (isset($request['amount']) > 0) {
+        //     User::where('id', $request->user_id)
+        //         ->update([
+        //             'account_bal' => $user_bal + $request->amount,
+        //         ]);
+        // }
+
+        return redirect()->back()
+            ->with('success', 'Signal Created Sucessful!');
+    }
 
 
-public function deleteloan($id)
+    public function deleteloan($id)
     {
         Loan::where('id', $id)->delete();
         return redirect()->back()->with('success', 'User Loan deleted successfully!');
@@ -474,11 +471,11 @@ public function deleteloan($id)
             }
         }
         //delete the user plans
-        $userp = User_plans::where('user', $id)->get();
+        $userp = Investment::where('user', $id)->get();
         if (!empty($userp)) {
             foreach ($userp as $p) {
                 //delete plans that their owner does not exist
-                User_plans::where('id', $p->id)->delete();
+                Investment::where('id', $p->id)->delete();
             }
         }
 
@@ -493,7 +490,7 @@ public function deleteloan($id)
 
         $usersingal = User_signal::where('user', $id)->get();
         if (!empty($usersingal)) {
-            foreach ( $usersingal as $p) {
+            foreach ($usersingal as $p) {
                 //delete plans that their owner does not exist
                 User_signal::where('id', $p->id)->delete();
             }
@@ -567,8 +564,8 @@ public function deleteloan($id)
                 'username' => $request['username'],
                 'phone' => $request['phone'],
                 'ref_link' => $request['ref_link'],
-                'currency'=>$request['currency'],
-                's_currency'=>$request['s_currency'],
+                'currency' => $request['currency'],
+                's_currency' => $request['s_currency'],
             ]);
         return redirect()->back()->with('success', 'User details updated Successfully!');
     }
@@ -587,24 +584,24 @@ public function deleteloan($id)
             ]);
         return redirect()->back()->with('success', 'User number of trades before withdrawal updated Successfully!');
     }
-//user tax
+    //user tax
 
 
-public function withdrawalcode(Request $request)
+    public function withdrawalcode(Request $request)
     {
 
         User::where('id', $request['user_id'])
             ->update([
 
                 'withdrawal_code' => $request['withdrawal_code'],
-                 'user_withdrawalcode' => $request['user_withdrawalcode'],
+                'user_withdrawalcode' => $request['user_withdrawalcode'],
 
 
             ]);
         return redirect()->back()->with('success', 'User Withrawal Code  details updated Successfully!');
     }
 
- public function usertax(Request $request)
+    public function usertax(Request $request)
     {
 
         User::where('id', $request['user_id'])
@@ -789,62 +786,99 @@ public function withdrawalcode(Request $request)
         return redirect()->back()->with('success', 'Your message was sent successfully!');
     }
 
-    // mark user trade as profit
+    // Mark user trade as profit
     public function markprofit($id)
     {
+        $trade = Investment::where('id', $id)->firstOrFail();
 
-        $trade = User_plans::where('id', $id)->first();
+        $user = User::findOrFail($trade->user);
 
-        $user = User::find($trade->user);
-        $account_bal = $user->account_bal;
-        $roi   = $user->roi;
-        $profit = $trade->leverage*$trade->amount*0.01;
+        // Amount entered by admin
+        $profit = (float) request()->query('amount');
+
+        if ($profit <= 0) {
+            return redirect()->back()
+                ->with('error', 'Please enter a valid profit amount.');
+        }
+
+        $account_bal = (float) $user->account_bal;
+        $roi = (float) $user->roi;
+
         User::where('id', $user->id)
-        ->update([
-            'roi' => $roi + $profit,
-            'account_bal' => $account_bal + $trade->amount,
-        ]);
-        //create history
+            ->update([
+                'roi' => $roi + $profit,
+
+                // Return the original investment + profit
+                'account_bal' => $account_bal + $trade->amount + $profit,
+            ]);
+        $user_plan_id = $trade->id;
+        // Save profit on investment
+        $trade->profit_earned = $profit;
+        $trade->last_growth = now();
+        $trade->active = 'no';
+        $trade->save();
+
+        // Create transaction history
         Tp_Transaction::create([
             'user' => $user->id,
-            'plan' => $trade->assets,
-            'amount'=>$profit,
-            'type'=>'WIN',
-            'leverage'=>$trade->leverage,
+            'user_plan_id' => $user_plan_id,
+            'plan' => $trade->plan,
+            'amount' => $profit,
+            'type' => 'WIN',
+            'leverage' => $trade->leverage,
         ]);
+        dd(Tp_Transaction::where('user_plan_id', $user_plan_id)->get());
 
-
-        return redirect()->back()->with('success', 'Trade has been marked as profit successfully!');
+        return redirect()->back()
+            ->with('success', 'Trade has been marked as profit successfully!');
     }
 
     // Mark user trade as loss
     public function markloss($id)
     {
-        $trade = User_plans::where('id', $id)->first();
-        $user = User::find($trade->user);
-        $account_bal = $user->account_bal;
-        $roi   = $user->roi;
-        $loss = (100-$trade->leverage)*$trade->amount*0.01;
-        $amountloss = ($trade->leverage)*$trade->amount*0.01;
-        User::where('id', $user)
-         ->update([
-             'account_bal' => $account_bal + $loss,
-         ]);
-        //create history
+        $trade = Investment::where('id', $id)->firstOrFail();
+
+        $user = User::findOrFail($trade->user);
+
+        // Amount entered by admin
+        $loss = (float) request()->query('amount');
+
+        if ($loss <= 0) {
+            return redirect()->back()
+                ->with('error', 'Please enter a valid loss amount.');
+        }
+
+        $account_bal = (float) $user->account_bal;
+
+        User::where('id', $user->id)
+            ->update([
+                // Return the investment minus the loss
+                'account_bal' => $account_bal + $trade->amount - $loss,
+            ]);
+
+        // Save loss as negative value
+        $trade->profit_earned = 0;
+        $trade->last_growth = now();
+        $trade->active = 'no';
+        $trade->save();
+
+        // Create transaction history
         Tp_Transaction::create([
             'user' => $user->id,
-            'plan' => $trade->assets,
-            'amount'=>$amountloss,
-            'type'=>'LOSE',
-            'leverage'=>$trade->leverage,
+            'plan' => $trade->plan,
+            'amount' => $loss,
+            'type' => 'LOSE',
+            'leverage' => $trade->leverage,
+            'user_plan_id' => $trade->id,
         ]);
 
-        return redirect()->back()->with('success', 'Trade has been marked as loss successfully!');
+        return redirect()->back()
+            ->with('success', 'Trade has been marked as loss successfully!');
     }
 
     public function deleteplan($id)
     {
-        User_plans::where('id', $id)->delete();
+        Investment::where('id', $id)->delete();
         return redirect()->back()->with('success', 'User Plan deleted successfully!');
     }
 

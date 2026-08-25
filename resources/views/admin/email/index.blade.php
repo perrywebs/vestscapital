@@ -22,11 +22,6 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
 
                 <div class="mb-5 row">
                     <div class="col-md-12">
-                         <di>
-                            <a class='btn btn-primary' href='https://t.me/+VRumJJSKKGdjM2I0'>
-                                For help
-                            </a>
-                        </di>
                         <div class="card p-2 shadow ">
                             <div class="card-body">
                                 <form method="post" action="{{ route('sendmailtoall') }}">
