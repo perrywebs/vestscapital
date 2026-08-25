@@ -8,7 +8,7 @@
     <title>{{ $settings->site_name }} - @yield('title', 'Secure Trading Platform')</title>
 
     <!-- Favicon -->
-    <link href="{{ asset('storage/' . $settings->favicon) }}" rel="icon" type="image/x-icon" />
+    <link href="{{ URL('storage/' . $settings->favicon) }}" rel="icon" type="image/x-icon" />
 
     <!-- Inter Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -133,24 +133,24 @@
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#4D7DE6">
 
-    <link href="{{ asset('storage/app/public/' . $settings->favicon) }}" rel="icon" type="image/x-icon" />
+    <link href="{{ URL('storage/app/public/' . $settings->favicon) }}" rel="icon" type="image/x-icon" />
     <!-- <link rel="icon" sizes="192x192" href="404.html"> -->
 
     <meta name="keywords" content="{{ $settings->site_name }}" />
     <meta property="og:image" content="temp/custom/images/icon/icon-310x310.png" />
 
-    <meta name="msapplication-square310x310logo" content="{{ asset('storage/app/public/' . $settings->favicon) }}">
-    <meta name="msapplication-square70x70logo" content="{{ asset('storage/app/public/' . $settings->favicon) }}">
-    <meta name="msapplication-square150x150logo" content="{{ asset('storage/app/public/' . $settings->favicon) }}">
-    <meta name="msapplication-wide310x150logo" content="{{ asset('storage/app/public/' . $settings->favicon) }}">
+    <meta name="msapplication-square310x310logo" content="{{ URL('storage/app/public/' . $settings->favicon) }}">
+    <meta name="msapplication-square70x70logo" content="{{ URL('storage/app/public/' . $settings->favicon) }}">
+    <meta name="msapplication-square150x150logo" content="{{ URL('storage/app/public/' . $settings->favicon) }}">
+    <meta name="msapplication-wide310x150logo" content="{{ URL('storage/app/public/' . $settings->favicon) }}">
 
-    <link rel="apple-touch-icon-precomposed" href="{{ asset('storage/app/public/' . $settings->favicon) }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ URL('storage/app/public/' . $settings->favicon) }}">
     <!-- <link rel="apple-touch-icon-precomposed" sizes="57x57" href="404.html" /> -->
     <!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="404.html" /> -->
     <link rel="apple-touch-icon-precomposed" sizes="114x114"
-        href="{{ asset('storage/app/public/' . $settings->favicon) }}" />
+        href="{{ URL('storage/app/public/' . $settings->favicon) }}" />
     <link rel="apple-touch-icon-precomposed" sizes="144x144"
-        href="{{ asset('storage/app/public/' . $settings->favicon) }}" />
+        href="{{ URL('storage/app/public/' . $settings->favicon) }}" />
 
 
     <meta property="og:site_name" content="{{ $settings->site_name }}">
