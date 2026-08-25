@@ -8,7 +8,7 @@
     <title>{{ $settings->site_name }} - @yield('title', 'Secure Trading Platform')</title>
 
     <!-- Favicon -->
-    <link href="{{ URL('storage/' . $settings->favicon) }}" rel="icon" type="image/x-icon" />
+    <link href="{{ URL('storage/app/public/' . $settings->favicon) }}" rel="icon" type="image/x-icon" />
 
     <!-- Inter Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
