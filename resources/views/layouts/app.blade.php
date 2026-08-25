@@ -9,21 +9,21 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $settings->site_name }} | {{ $title }}</title>
-    <link rel="icon" href="{{ asset('storage/app/public/' . $settings->favicon) }}" type="image/png" />
+    <link rel="icon" href="{{ URL('storage/app/public/' . $settings->favicon) }}" type="image/png" />
 
     @section('styles')
         {{-- <script src="unpkg.com/metaapi.cloud-sdk/index.js"></script> --}}
         <script src="https://unpkg.com/metaapi.cloud-sdk/index.js"></script>
         <!-- Fonts and icons -->
-        {{-- <script src="{{ asset('dash/js/plugin/webfont/webfont.min.js') }}"></script> --}}
+        {{-- <script src="{{ URL('dash/js/plugin/webfont/webfont.min.js') }}"></script> --}}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
         <!-- Sweet Alert -->
-        {{-- <script src="{{ asset('dash/js/plugin/sweetalert/sweetalert.min.js') }} "></script> --}}
+        {{-- <script src="{{ URL('dash/js/plugin/sweetalert/sweetalert.min.js') }} "></script> --}}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
         <!-- CSS Files -->
-        {{-- <link rel="stylesheet" href="{{ asset('dash/css/bootstrap.min.css') }}"> --}}
+        {{-- <link rel="stylesheet" href="{{ URL('dash/css/bootstrap.min.css') }}"> --}}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="{{ asset('dash/css/fonts.min.css') }}">
+        <link rel="stylesheet" href="{{ URL('dash/css/fonts.min.css') }}">
         <!-- Font Awesome Icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
             integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -31,10 +31,10 @@
         @php
             $theme = $settings->website_theme == 'blue.css' ? 'atlantis.min.css' : $settings->website_theme;
         @endphp
-        <link rel="stylesheet" href="{{ asset('dash/css/' . $theme) }}">
-        <link rel="stylesheet" href="{{ asset('dash/css/customs.css') }}">
-        <link rel="stylesheet" href="{{ asset('dash/css/style.css') }}">
-        {{-- <link rel="stylesheet" href="{{ asset('dash/css/atlantis.min.css') }}"> --}}
+        <link rel="stylesheet" href="{{ URL('dash/css/' . $theme) }}">
+        <link rel="stylesheet" href="{{ URL('dash/css/customs.css') }}">
+        <link rel="stylesheet" href="{{ URL('dash/css/style.css') }}">
+        {{-- <link rel="stylesheet" href="{{ URL('dash/css/atlantis.min.css') }}"> --}}
         <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
         <link rel="stylesheet" type="text/css"
             href="https://cdn.datatables.net/v/bs4/dt-1.10.21/af-2.3.5/b-1.6.3/b-flash-1.6.3/b-html5-1.6.3/b-print-1.6.3/r-2.2.5/datatables.min.css" />
@@ -47,14 +47,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
         <!-- Bootstrap Notify -->
-        {{-- <script src="{{ asset('dash/js/plugin/bootstrap-notify/bootstrap-notify.min.js') }} "></script>
-        <script src="{{ asset('dash/js/plugin/sweetalert/sweetalert.min.js') }} "></script> --}}
+        {{-- <script src="{{ URL('dash/js/plugin/bootstrap-notify/bootstrap-notify.min.js') }} "></script>
+        <script src="{{ URL('dash/js/plugin/sweetalert/sweetalert.min.js') }} "></script> --}}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
-        {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+        {{-- <script src="{{ URL('js/app.js') }}"></script> --}}
         <!--PayPal-->
         <script>
             // Add your client ID and secret
@@ -90,38 +90,38 @@
     @section('scripts')
         <!--   Core JS Files   -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        {{-- <script src="{{ asset('dash/js/core/jquery.3.2.1.min.js')}} "></script> --}}
-        <script src="{{ asset('dash/js/core/popper.min.js') }}"></script>
-        <script src="{{ asset('dash/js/core/bootstrap.min.js') }} "></script>
+        {{-- <script src="{{ URL('dash/js/core/jquery.3.2.1.min.js')}} "></script> --}}
+        <script src="{{ URL('dash/js/core/popper.min.js') }}"></script>
+        <script src="{{ URL('dash/js/core/bootstrap.min.js') }} "></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 
         <!-- jQuery UI -->
-        <script src="{{ asset('dash/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
-        <script src="{{ asset('dash/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js') }}"></script>
+        <script src="{{ URL('dash/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
+        <script src="{{ URL('dash/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 
         <!-- jQuery Scrollbar -->
-        <script src="{{ asset('dash/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }} "></script>
+        <script src="{{ URL('dash/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }} "></script>
         <!-- jQuery Sparkline -->
-        <script src="{{ asset('dash/js/plugin/jquery.sparkline/jquery.sparkline.min.js') }} "></script>
+        <script src="{{ URL('dash/js/plugin/jquery.sparkline/jquery.sparkline.min.js') }} "></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.scrollbar/0.2.11/jquery.scrollbar.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
 
         <!-- Sweet Alert -->
-        {{-- <script src="{{ asset('dash/js/plugin/sweetalert/sweetalert.min.js') }} "></script> --}}
+        {{-- <script src="{{ URL('dash/js/plugin/sweetalert/sweetalert.min.js') }} "></script> --}}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
         <!-- Bootstrap Notify -->
-        <script src="{{ asset('dash/js/plugin/bootstrap-notify/bootstrap-notify.min.js') }} "></script>
+        <script src="{{ URL('dash/js/plugin/bootstrap-notify/bootstrap-notify.min.js') }} "></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.3/bootstrap-notify.min.js"></script>
 
         <script type="text/javascript"
             src="https://cdn.datatables.net/v/bs4/dt-1.10.21/af-2.3.5/b-1.6.3/b-flash-1.6.3/b-html5-1.6.3/b-print-1.6.3/r-2.2.5/datatables.min.js">
         </script>
 
-        <script src="{{ asset('dash/js/atlantis.min.js') }}"></script>
-        <script src="{{ asset('dash/js/atlantis.js') }}"></script>
+        <script src="{{ URL('dash/js/atlantis.min.js') }}"></script>
+        <script src="{{ URL('dash/js/atlantis.js') }}"></script>
 
         <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
         </script>
@@ -133,7 +133,7 @@
                 }, 'google_translate_element');
             }
         </script>
-        <script src="{{ asset('dash/js/customs.js') }}"></script>
+        <script src="{{ URL('dash/js/customs.js') }}"></script>
     @show
 
 </body>
