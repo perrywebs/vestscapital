@@ -1,6 +1,6 @@
-@extends('layouts.dasht')
-@section('title', $title)
-@section('content')
+
+<?php $__env->startSection('title', $title); ?>
+<?php $__env->startSection('content'); ?>
 
     <!-- Notification Alerts -->
 
@@ -10,8 +10,30 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div class="space-y-4 mb-6">
 
-                <x-danger-alert />
-                <x-success-alert />
+                <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.danger-alert','data' => []]); ?>
+<?php $component->withName('danger-alert'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
+                <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.success-alert','data' => []]); ?>
+<?php $component->withName('success-alert'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
             </div>
 
             <!-- Header Section -->
@@ -25,7 +47,7 @@
                     Complete Your Deposit
                 </h1>
                 <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-                    Securely deposit funds using <span class="text-blue-400 font-semibold">{{ $payment_mode->name }}</span>
+                    Securely deposit funds using <span class="text-blue-400 font-semibold"><?php echo e($payment_mode->name); ?></span>
                     to start trading immediately
                 </p>
             </div>
@@ -63,8 +85,8 @@
                 </div>
             </div>
 
-            <form method="POST" enctype="multipart/form-data" action="{{ route('savedeposit') }}" class="space-y-8">
-                @csrf
+            <form method="POST" enctype="multipart/form-data" action="<?php echo e(route('savedeposit')); ?>" class="space-y-8">
+                <?php echo csrf_field(); ?>
 
                 <!-- Main Payment Card -->
                 <div class="bg-gray-900 rounded-2xl border border-gray-800 shadow-2xl overflow-hidden">
@@ -80,7 +102,7 @@
                                 </div>
                                 <div>
                                     <h2 class="text-lg sm:text-xl font-bold text-white">Payment Details</h2>
-                                    <p class="text-sm sm:text-base text-gray-400">{{ $payment_mode->name }} Deposit</p>
+                                    <p class="text-sm sm:text-base text-gray-400"><?php echo e($payment_mode->name); ?> Deposit</p>
                                 </div>
                             </div>
                             <div class="flex flex-wrap gap-2">
@@ -114,8 +136,8 @@
                                         <span>Amount to Deposit</span>
                                     </div>
                                     <div class="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 break-all">
-                                        {{ $amount }}<span
-                                            class="text-lg sm:text-2xl text-gray-400">{{ Auth::user()->currency }}</span>
+                                        <?php echo e($amount); ?><span
+                                            class="text-lg sm:text-2xl text-gray-400"><?php echo e(Auth::user()->currency); ?></span>
                                     </div>
                                     <div
                                         class="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-amber-500/20 rounded-full border border-amber-500/30">
@@ -145,7 +167,7 @@
                                             <div class="min-w-0">
                                                 <h4 class="font-medium text-white text-sm sm:text-base">Send Payment</h4>
                                                 <p class="text-xs sm:text-sm text-gray-400 break-words">Transfer
-                                                    {{ $amount }}{{ Auth::user()->currency }} to the wallet address
+                                                    <?php echo e($amount); ?><?php echo e(Auth::user()->currency); ?> to the wallet address
                                                 </p>
                                             </div>
                                         </div>
@@ -189,7 +211,7 @@
                                         class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-lg">
                                     </div>
                                     <div class="relative bg-white p-4 sm:p-6 rounded-2xl">
-                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data={{ $payment_mode->wallet_address }}"
+                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=<?php echo e($payment_mode->wallet_address); ?>"
                                             alt="Payment QR Code"
                                             class="w-full h-auto max-w-[200px] sm:max-w-[250px] mx-auto rounded-lg">
                                         <button type="button" @click="downloadQR()"
@@ -215,11 +237,11 @@
                                     </label>
                                     <div class="relative group">
                                         <div class="flex flex-col sm:flex-row">
-                                            <input type="text" value="{{ $payment_mode->wallet_address }}"
+                                            <input type="text" value="<?php echo e($payment_mode->wallet_address); ?>"
                                                 class="w-full sm:flex-1 bg-gray-800 border border-gray-700 rounded-xl sm:rounded-l-xl sm:rounded-r-none px-3 sm:px-4 py-3 text-white text-xs sm:text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200 break-all"
                                                 readonly>
                                             <button type="button"
-                                                @click="copyToClipboard('{{ $payment_mode->wallet_address }}')"
+                                                @click="copyToClipboard('<?php echo e($payment_mode->wallet_address); ?>')"
                                                 class="mt-2 sm:mt-0 px-4 py-3 bg-blue-600 hover:bg-blue-700 border border-blue-600 rounded-xl sm:rounded-l-none sm:rounded-r-xl text-white transition-all duration-200 flex items-center justify-center gap-2">
                                                 <i data-lucide="copy" class="w-3 h-3 sm:w-4 sm:h-4"></i>
                                                 <span x-text="copied ? 'Copied!' : 'Copy'"
@@ -277,12 +299,12 @@
                         </div>
 
                         <!-- Hidden Fields -->
-                        <input type="hidden" name="amount" value="{{ $amount }}">
-                        <input type="hidden" name="method" value="{{ $payment_mode->name }}">
-                        <input type="hidden" name="paymethd_method" value="{{ $payment_mode->name }}">
-                        @if ($asset)
-                            <input type="hidden" name="asset" value="{{ $asset }}">
-                        @endif
+                        <input type="hidden" name="amount" value="<?php echo e($amount); ?>">
+                        <input type="hidden" name="method" value="<?php echo e($payment_mode->name); ?>">
+                        <input type="hidden" name="paymethd_method" value="<?php echo e($payment_mode->name); ?>">
+                        <?php if($asset): ?>
+                            <input type="hidden" name="asset" value="<?php echo e($asset); ?>">
+                        <?php endif; ?>
 
                         <!-- Submit Button -->
                         <div class="pt-4 sm:pt-6">
@@ -465,7 +487,7 @@
         });
     </script>
     <style>
-        @keyframes float {
+        @keyframes  float {
 
             0%,
             100% {
@@ -482,4 +504,6 @@
         }
     </style>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.dasht', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\LENOVO\Herd\vestscapital\resources\views/user/payment.blade.php ENDPATH**/ ?>

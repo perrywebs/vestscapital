@@ -80,7 +80,7 @@
                                     <i data-lucide="trending-up" class="w-5 h-5 md:w-6 md:h-6 text-green-600 dark:text-green-400"></i>
                                 </div>
                                 <div class="min-w-0 flex-1">
-                                    <p class="text-sm text-gray-300 dark:text-gray-400">Profit Earned</p>
+                                    <p class="text-sm text-gray-300 dark:text-gray-400">Profit Earned Today</p>
                                     <p class="text-xl md:text-2xl font-bold text-green-400 dark:text-green-400 break-words">
                                         {{ Auth::user()->currency }}{{ number_format($plan->profit_earned, 2, '.', ',') }}
                                     </p>
@@ -89,7 +89,7 @@
                         </div>
 
                         <!-- Total Return -->
-                        <div class="bg-gray-800 dark:bg-gray-700/50 rounded-xl p-4 border border-gray-700 dark:border-gray-600">
+                        {{-- <div class="bg-gray-800 dark:bg-gray-700/50 rounded-xl p-4 border border-gray-700 dark:border-gray-600">
                             <div class="flex items-start gap-3">
                                 <div class="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex-shrink-0">
                                     <i data-lucide="wallet" class="w-5 h-5 md:w-6 md:h-6 text-purple-600 dark:text-purple-400"></i>
@@ -105,7 +105,7 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

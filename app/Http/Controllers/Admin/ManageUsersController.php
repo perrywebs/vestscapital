@@ -815,7 +815,7 @@ class ManageUsersController extends Controller
         // Save profit on investment
         $trade->profit_earned = $profit;
         $trade->last_growth = now();
-        $trade->active = 'no';
+        // $trade->active = 'no';
         $trade->save();
 
         // Create transaction history
@@ -827,7 +827,6 @@ class ManageUsersController extends Controller
             'type' => 'WIN',
             'leverage' => $trade->leverage,
         ]);
-        dd(Tp_Transaction::where('user_plan_id', $user_plan_id)->get());
 
         return redirect()->back()
             ->with('success', 'Trade has been marked as profit successfully!');
@@ -859,7 +858,7 @@ class ManageUsersController extends Controller
         // Save loss as negative value
         $trade->profit_earned = 0;
         $trade->last_growth = now();
-        $trade->active = 'no';
+        // $trade->active = 'no';
         $trade->save();
 
         // Create transaction history

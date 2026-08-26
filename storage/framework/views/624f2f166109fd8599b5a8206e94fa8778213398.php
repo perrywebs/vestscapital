@@ -37,7 +37,6 @@
                             <thead>
                                 <tr>
                                     <th>Client name</th>
-                                    <th>Plan Status</th>
                                     <th>Investment Plan</th>
                                     <th>Amount Invested</th>
                                     <th>Duration</th>
@@ -54,17 +53,6 @@
                                         <?php if(isset($plan->puser->name) && $plan->puser->name != null): ?>
                                             <td><?php echo e($plan->puser->name ?? 'N/A'); ?></td>
                                             <td><?php echo e($plan->uplan->name); ?></td>
-                                            <td>
-                                                <?php if($plan->uplan->active == 'yes'): ?>
-                                                    <span class="badge badge-success">
-                                                        Active
-                                                    </span>
-                                                <?php else: ?>
-                                                    <span class="badge badge-danger">
-                                                        Inactive
-                                                    </span>
-                                                <?php endif; ?>
-                                            </td>
                                         <?php endif; ?>
                                         <td><?php echo e($plan->puser->currency ?? 'N/A'); ?><?php echo e(number_format($plan->amount)); ?></td>
                                         <td><?php echo e($plan->inv_duration); ?></td>

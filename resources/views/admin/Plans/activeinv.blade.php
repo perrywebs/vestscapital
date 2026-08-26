@@ -16,7 +16,6 @@
                             <thead>
                                 <tr>
                                     <th>Client name</th>
-                                    <th>Plan Status</th>
                                     <th>Investment Plan</th>
                                     <th>Amount Invested</th>
                                     <th>Duration</th>
@@ -33,17 +32,6 @@
                                         @if (isset($plan->puser->name) && $plan->puser->name != null)
                                             <td>{{ $plan->puser->name ?? 'N/A' }}</td>
                                             <td>{{ $plan->uplan->name }}</td>
-                                            <td>
-                                                @if ($plan->uplan->active == 'yes')
-                                                    <span class="badge badge-success">
-                                                        Active
-                                                    </span>
-                                                @else
-                                                    <span class="badge badge-danger">
-                                                        Inactive
-                                                    </span>
-                                                @endif
-                                            </td>
                                         @endif
                                         <td>{{ $plan->puser->currency ?? 'N/A' }}{{ number_format($plan->amount) }}</td>
                                         <td>{{ $plan->inv_duration }}</td>

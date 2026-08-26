@@ -157,13 +157,7 @@
                                             <span class="text-gray-600 dark:text-gray-400">Expected ROI:</span>
                                             <span class="font-semibold text-green-600"><?php echo e($plan->uplan->increment_amount); ?>%</span>
                                         </div>
-                                        <div class="flex items-center gap-2">
-                                            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                            </svg>
-                                            <span class="text-gray-600 dark:text-gray-400">Expiration :</span>
-                                            <span class="font-semibold text-gray-900 dark:text-white"><?php echo e($plan->expiration); ?></span>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -240,32 +234,7 @@
                         </div>
 
                         <!-- Progress Bar (for active plans) -->
-                        <?php if($plan->active == 'yes'): ?>
-                            <?php
-                                $startDate = $plan->created_at;
-                                $endDate = \Carbon\Carbon::parse($plan->expire_date);
-                                $currentDate = now();
-                                $totalDays = $startDate->diffInDays($endDate);
-                                $elapsedDays = $startDate->diffInDays($currentDate);
-                                $progress = $totalDays > 0 ? min(($elapsedDays / $totalDays) * 100, 100) : 0;
-                                // Calculate remaining days - if end date is in the past, this will be 0
-                                $remainingDays = $currentDate->lt($endDate) ? $currentDate->diffInDays($endDate) : 0;
-                            ?>
-                            <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
-                                <div class="flex items-center justify-between mb-2">
-                                    <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Investment Progress</span>
-                                    <span class="text-sm text-gray-600 dark:text-gray-400"><?php echo e($remainingDays); ?> days remaining</span>
-                                </div>
-                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                                    <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full transition-all duration-300"
-                                         style="width: <?php echo e($progress); ?>%"></div>
-                                </div>
-                                <div class="flex justify-between text-xs text-gray-500 dark:text-gray-500 mt-1">
-                                    <span><?php echo e(number_format($progress, 1)); ?>% complete</span>
-                                    <span><?php echo e($totalDays); ?> total days</span>
-                                </div>
-                            </div>
-                        <?php endif; ?>
+                        
                     </div>
                 </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>

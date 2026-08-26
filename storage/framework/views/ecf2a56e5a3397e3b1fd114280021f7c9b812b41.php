@@ -7,7 +7,7 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="<?php echo e(asset('storage/' . $settings->favicon)); ?>" rel="icon" type="image/x-icon" />
+    <link href="<?php echo e(URL('storage/app/public/' . $settings->favicon)); ?>" rel="icon" type="image/x-icon" />
     <!-- Inter Font -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -159,7 +159,7 @@
                 <div class="flex items-center space-x-4">
                     <!-- Logo -->
                     <a href="<?php echo e(route('dashboard')); ?>" class="flex items-center space-x-3 group">
-                        <img src="<?php echo e(asset('storage/' . $settings->logo)); ?>" class="h-8 w-auto" alt="Logo" />
+                        <img src="<?php echo e(URL('storage/app/public/' . $settings->logo)); ?>" class="h-8 w-auto" alt="Logo" />
                         <div class="hidden sm:block">
                             <div class="text-xs text-gray-500 dark:text-gray-400 font-medium">
 

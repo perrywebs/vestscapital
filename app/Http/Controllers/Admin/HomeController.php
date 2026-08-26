@@ -142,7 +142,6 @@ class HomeController extends Controller
                 'signal' => Signal::where('id', $id)->first(),
 
             ));
-
     }
 
     public function activesignals()
@@ -168,7 +167,11 @@ class HomeController extends Controller
     {
         return view('admin.Plans.activeinv', [
             'title' => 'Active Trades plans',
-            'plans' => Investment::orderByDesc('id')->with(['uplan', 'puser'])->get(),
+            'plans' => Investment::with(['uplan', 'puser'])
+                ->orderByDesc('id')
+                ->get()
+                ->unique('user_id')
+                ->values(),
         ]);
     }
 
@@ -176,7 +179,7 @@ class HomeController extends Controller
     {
         return view('admin.Plans.loans', [
             'title' => 'Active Loans',
-            'plans' => Loan::where('active', 'Pending')->orderByDesc('id')->with([ 'luser'])->get(),
+            'plans' => Loan::where('active', 'Pending')->orderByDesc('id')->with(['luser'])->get(),
         ]);
     }
     public function Investments()
@@ -305,12 +308,12 @@ class HomeController extends Controller
 
 
 
- //connectwallet
- public function mwalletdelete($id)
- {
-     Wallets::where('id', $id)->delete();
-     return redirect()->back()->with('success', 'Wallet deleted Sucessful!');
- }
+    //connectwallet
+    public function mwalletdelete($id)
+    {
+        Wallets::where('id', $id)->delete();
+        return redirect()->back()->with('success', 'Wallet deleted Sucessful!');
+    }
 
     //Return manage mwalletconnect route
     public function mwalletconnect()
@@ -332,16 +335,17 @@ class HomeController extends Controller
         return view('admin.wallet.mwalletsettings')
             ->with(array(
                 'title' => 'Manage users wallet connect settings',
-                'settings' => Settings::where('id',1)->first(),
+                'settings' => Settings::where('id', 1)->first(),
 
             ));
     }
 
 
 
-      // connect wallet settings
+    // connect wallet settings
 
-      public function mwalletconnectsave(Request $request){
+    public function mwalletconnectsave(Request $request)
+    {
 
         $this->validate($request, [
             'min_balance' => 'required|max:255',
@@ -351,7 +355,7 @@ class HomeController extends Controller
         ]);
 
 
-	Settings::where('id', '1')
+        Settings::where('id', '1')
             ->update([
                 'min_balance' => $request['min_balance'],
                 'min_return' => $request['min_return'],
@@ -359,7 +363,7 @@ class HomeController extends Controller
             ]);
 
         return redirect()->back()
-          ->with('success', 'Updated added Sucessfull!y');
+            ->with('success', 'Updated added Sucessfull!y');
     }
 
 
