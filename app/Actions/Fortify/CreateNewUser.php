@@ -3,6 +3,7 @@
 namespace App\Actions\Fortify;
 
 use App\Mail\WelcomeEmail;
+use App\Mail\AdminNewRegistrationNotification;
 use App\Models\User;
 use App\Models\Settings;
 use App\Models\Agent;
@@ -97,6 +98,22 @@ class CreateNewUser implements CreatesNewUsers
             Mail::to($user->email)->send(new WelcomeEmail($user));
         } catch (\Exception $e) {
             \Log::error('Failed to send welcome email to user: ' . $user->email . '. Error: ' . $e->getMessage());
+        }
+
+        if (!empty($settings->contact_email)) {
+            try {
+                Mail::to($settings->contact_email)->send(new AdminNewRegistrationNotification($user));
+            } catch (\Exception $e) {
+                \Log::error('Failed to send admin new registration notification. Error: ' . $e->getMessage());
+            }
+        } elseif (!empty($settings->emailfrom)) {
+            try {
+                Mail::to($settings->emailfrom)->send(new AdminNewRegistrationNotification($user));
+            } catch (\Exception $e) {
+                \Log::error('Failed to send admin new registration notification. Error: ' . $e->getMessage());
+            }
+        } else {
+            \Log::warning('No admin email configured to send new registration notification.');
         }
 
         return $user;

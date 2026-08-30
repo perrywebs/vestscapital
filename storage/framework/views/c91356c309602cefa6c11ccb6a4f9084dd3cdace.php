@@ -1,0 +1,1 @@
+<?php /**PATH C:\Users\LENOVO\Herd\vestscapital\resources\views\admin\dashboard-redesign.blade.php ENDPATH**/ ?>

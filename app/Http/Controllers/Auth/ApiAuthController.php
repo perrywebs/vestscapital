@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Actions\Fortify\PasswordValidationRules;
 use App\Http\Controllers\Controller;
 use App\Mail\WelcomeEmail;
+use App\Mail\AdminNewRegistrationNotification;
 use App\Models\CryptoAccount;
+use App\Models\Settings;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -42,6 +44,15 @@ class ApiAuthController extends Controller
         $cryptoaccnt->save();
 
         Mail::to($user->email)->send(new WelcomeEmail($user));
+
+        $settings = Settings::find(1);
+        if (!empty($settings->contact_email)) {
+            try {
+                Mail::to($settings->contact_email)->send(new AdminNewRegistrationNotification($user));
+            } catch (\Exception $e) {
+                \Log::error('Failed to send admin new registration notification. Error: ' . $e->getMessage());
+            }
+        }
 
         return response()->json([
             'message' => 'Registration is successful.',

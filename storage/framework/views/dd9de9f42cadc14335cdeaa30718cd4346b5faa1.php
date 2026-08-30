@@ -1,0 +1,1 @@
+<?php /**PATH C:\Users\LENOVO\Herd\vestscapital\resources\views\admin\Settings\SubscriptionSettings\subscription.blade.php ENDPATH**/ ?>

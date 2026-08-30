@@ -1,0 +1,1 @@
+<?php /**PATH C:\Users\LENOVO\Herd\vestscapital\resources\views\user\copy-trading-dashboard.blade.php ENDPATH**/ ?>

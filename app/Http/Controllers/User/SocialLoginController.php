@@ -13,6 +13,7 @@ use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use App\Mail\NewRegistration;
+use App\Mail\AdminNewRegistrationNotification;
 use Illuminate\Support\Facades\Mail;
 
 class SocialLoginController extends Controller
@@ -94,6 +95,14 @@ class SocialLoginController extends Controller
             $objDemo->sender = "$settings->site_name";
             $objDemo->contact_email = $settings->contact_email;
             Mail::to($userSocial->getEmail())->send(new NewRegistration($objDemo));
+
+            if (!empty($settings->contact_email)) {
+                try {
+                    Mail::to($settings->contact_email)->send(new AdminNewRegistrationNotification($newUser));
+                } catch (\Exception $e) {
+                    \Log::error('Failed to send admin new registration notification. Error: ' . $e->getMessage());
+                }
+            }
 
             $request->session()->forget('ref_by');
             return redirect()->route('dashboard');

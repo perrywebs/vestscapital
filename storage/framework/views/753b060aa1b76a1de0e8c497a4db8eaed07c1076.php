@@ -1,0 +1,1 @@
+<?php /**PATH C:\Users\LENOVO\Herd\vestscapital\resources\views\user\transfer_new.blade.php ENDPATH**/ ?>
